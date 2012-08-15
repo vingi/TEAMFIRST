@@ -1,0 +1,5 @@
+D:\Project\TEAMFIRST\TEAMFIRST\bin\TEAMFIRST.dll
+D:\Project\TEAMFIRST\TEAMFIRST\bin\TEAMFIRST.pdb
+D:\Project\TEAMFIRST\TEAMFIRST\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\TEAMFIRST\TEAMFIRST\obj\Debug\TEAMFIRST.dll
+D:\Project\TEAMFIRST\TEAMFIRST\obj\Debug\TEAMFIRST.pdb
