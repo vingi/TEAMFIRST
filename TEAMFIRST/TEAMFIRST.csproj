@@ -14,6 +14,7 @@
     <AssemblyName>TEAMFIRST</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,18 +58,457 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\CSS\aboutus.css" />
+    <Content Include="Assets\CSS\Base.css" />
+    <Content Include="Assets\CSS\contactus.css" />
+    <Content Include="Assets\CSS\index.css" />
+    <Content Include="Assets\CSS\Introduce.css" />
+    <Content Include="Assets\CSS\news.css" />
+    <Content Include="Assets\CSS\paper.css" />
+    <Content Include="Assets\CSS\paper_detail.css" />
+    <Content Include="Assets\CSS\products.css" />
+    <Content Include="Assets\CSS\Public.css" />
+    <Content Include="Assets\CSS\Site.css" />
+    <Content Include="Assets\CSS\stores.css" />
+    <Content Include="Assets\Images\1-1.jpg" />
+    <Content Include="Assets\Images\1-2.jpg" />
+    <Content Include="Assets\Images\1-3.jpg" />
+    <Content Include="Assets\Images\2-1.jpg" />
+    <Content Include="Assets\Images\2-2.jpg" />
+    <Content Include="Assets\Images\2-3.jpg" />
+    <Content Include="Assets\Images\3-1.jpg" />
+    <Content Include="Assets\Images\3-2.jpg" />
+    <Content Include="Assets\Images\3-3.jpg" />
+    <Content Include="Assets\Images\aboutus_bg.png" />
+    <Content Include="Assets\Images\about_img1.png" />
+    <Content Include="Assets\Images\about_img2.png" />
+    <Content Include="Assets\Images\about_img3.png" />
+    <Content Include="Assets\Images\admin\bt_login.gif" />
+    <Content Include="Assets\Images\admin\login_1.jpg" />
+    <Content Include="Assets\Images\admin\login_2.jpg" />
+    <Content Include="Assets\Images\admin\login_3.jpg" />
+    <Content Include="Assets\Images\admin\login_4.jpg" />
+    <Content Include="Assets\Images\admin\login_5.jpg" />
+    <Content Include="Assets\Images\Base\button01_black.png" />
+    <Content Include="Assets\Images\Base\button01_on.png" />
+    <Content Include="Assets\Images\Base\button02_black.png" />
+    <Content Include="Assets\Images\Base\button02_on.png" />
+    <Content Include="Assets\Images\Base\button03_black.png" />
+    <Content Include="Assets\Images\Base\button03_on.png" />
+    <Content Include="Assets\Images\Base\button04_black.png" />
+    <Content Include="Assets\Images\Base\button04_on.png" />
+    <Content Include="Assets\Images\Base\content_bg.png" />
+    <Content Include="Assets\Images\Base\flower.png" />
+    <Content Include="Assets\Images\Base\foot_line.png" />
+    <Content Include="Assets\Images\Base\logo.png" />
+    <Content Include="Assets\Images\Base\navi_bg.png" />
+    <Content Include="Assets\Images\big_logo.png" />
+    <Content Include="Assets\Images\contact_bg.png" />
+    <Content Include="Assets\Images\icon1.png" />
+    <Content Include="Assets\Images\icon_bt01.png" />
+    <Content Include="Assets\Images\icon_bt01_b.png" />
+    <Content Include="Assets\Images\icon_bt02.png" />
+    <Content Include="Assets\Images\icon_bt02_b.png" />
+    <Content Include="Assets\Images\icon_bt03.png" />
+    <Content Include="Assets\Images\icon_bt03_b.png" />
+    <Content Include="Assets\Images\icon_yellow.png" />
+    <Content Include="Assets\Images\Index\honor.png" />
+    <Content Include="Assets\Images\Index\index_product.png" />
+    <Content Include="Assets\Images\introduce_bg.png" />
+    <Content Include="Assets\Images\line.png" />
+    <Content Include="Assets\Images\list.png" />
+    <Content Include="Assets\Images\news01.png" />
+    <Content Include="Assets\Images\news02.png" />
+    <Content Include="Assets\Images\news03.png" />
+    <Content Include="Assets\Images\next_page.png" />
+    <Content Include="Assets\Images\next_page_sm.png" />
+    <Content Include="Assets\Images\pre_page.png" />
+    <Content Include="Assets\Images\pre_page_sm.png" />
+    <Content Include="Assets\Images\send.png" />
+    <Content Include="Assets\Images\sm_1-1.png" />
+    <Content Include="Assets\Images\sm_1-2.png" />
+    <Content Include="Assets\Images\sm_1-3.png" />
+    <Content Include="Assets\Images\split_line.png" />
+    <Content Include="Assets\Images\split_line_yellow.png" />
+    <Content Include="Assets\JS\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Assets\JS\jquery-1.4.1.js" />
+    <Content Include="Assets\JS\jquery-1.4.1.min.js" />
+    <Content Include="Assets\JS\jquery.uniform.js" />
+    <Content Include="Assets\JS\jquery.validate.js" />
+    <Content Include="Assets\Style\11.gif" />
+    <Content Include="Assets\Style\12.gif" />
+    <Content Include="Assets\Style\13.gif" />
+    <Content Include="Assets\Style\14.gif" />
+    <Content Include="Assets\Style\15.gif" />
+    <Content Include="Assets\Style\16.gif" />
+    <Content Include="Assets\Style\17.gif" />
+    <Content Include="Assets\Style\18.gif" />
+    <Content Include="Assets\Style\19.gif" />
+    <Content Include="Assets\Style\1a.gif" />
+    <Content Include="Assets\Style\1b.gif" />
+    <Content Include="Assets\Style\1c.gif" />
+    <Content Include="Assets\Style\1d.gif" />
+    <Content Include="Assets\Style\1e.gif" />
+    <Content Include="Assets\Style\1f.gif" />
+    <Content Include="Assets\Style\21.gif" />
+    <Content Include="Assets\Style\218.gif" />
+    <Content Include="Assets\Style\22.gif" />
+    <Content Include="Assets\Style\23.gif" />
+    <Content Include="Assets\Style\24.gif" />
+    <Content Include="Assets\Style\25.gif" />
+    <Content Include="Assets\Style\26.gif" />
+    <Content Include="Assets\Style\27.gif" />
+    <Content Include="Assets\Style\28.gif" />
+    <Content Include="Assets\Style\29.gif" />
+    <Content Include="Assets\Style\31.gif" />
+    <Content Include="Assets\Style\32.gif" />
+    <Content Include="Assets\Style\33.gif" />
+    <Content Include="Assets\Style\34.gif" />
+    <Content Include="Assets\Style\41.gif" />
+    <Content Include="Assets\Style\42.gif" />
+    <Content Include="Assets\Style\43.gif" />
+    <Content Include="Assets\Style\44.gif" />
+    <Content Include="Assets\Style\51.gif" />
+    <Content Include="Assets\Style\52.gif" />
+    <Content Include="Assets\Style\53.gif" />
+    <Content Include="Assets\Style\54.gif" />
+    <Content Include="Assets\Style\601.gif" />
+    <Content Include="Assets\Style\61.gif" />
+    <Content Include="Assets\Style\62.gif" />
+    <Content Include="Assets\Style\63.gif" />
+    <Content Include="Assets\Style\64.gif" />
+    <Content Include="Assets\Style\65.gif" />
+    <Content Include="Assets\Style\66.gif" />
+    <Content Include="Assets\Style\67.gif" />
+    <Content Include="Assets\Style\701.gif" />
+    <Content Include="Assets\Style\702.gif" />
+    <Content Include="Assets\Style\71.gif" />
+    <Content Include="Assets\Style\arrow.gif" />
+    <Content Include="Assets\Style\body_background.png" />
+    <Content Include="Assets\Style\border_bg.png" />
+    <Content Include="Assets\Style\border_end.png" />
+    <Content Include="Assets\Style\btu_ok.png" />
+    <Content Include="Assets\Style\close.gif" />
+    <Content Include="Assets\Style\content_li_top.png" />
+    <Content Include="Assets\Style\default.css" />
+    <Content Include="Assets\Style\Folder_bigbtu.png" />
+    <Content Include="Assets\Style\left_tabid_cnt_top.png" />
+    <Content Include="Assets\Style\left_tab_Selected.gif" />
+    <Content Include="Assets\Style\left_tab_Selectedno.gif" />
+    <Content Include="Assets\Style\line_2.gif" />
+    <Content Include="Assets\Style\logo.png" />
+    <Content Include="Assets\Style\menu.js" />
+    <Content Include="Assets\Style\open.gif" />
+    <Content Include="Assets\Style\option.gif" />
+    <Content Include="Assets\Style\progress.jpg" />
+    <Content Include="Assets\Style\progress1.jpg" />
+    <Content Include="Assets\Style\quote.gif" />
+    <Content Include="Assets\Style\skinpic.png" />
+    <Content Include="Assets\Style\skin_used.png" />
+    <Content Include="Assets\Style\style.css" />
+    <Content Include="Assets\Style\tab.gif" />
+    <Content Include="Assets\Style\used.png" />
+    <Content Include="Assets\Style\user_btu_left.png" />
+    <Content Include="Assets\Style\user_btu_right.png" />
+    <Content Include="Assets\Style\user_post_input.png" />
+    <Content Include="Assets\Style\user_post_inputtxt.png" />
+    <Content Include="Assets\Style\user_post_inputtxt1.png" />
+    <Content Include="Assets\Style\user_post_title_bg.png" />
+    <Content Include="Assets\Style\user_post_top_bg.png" />
+    <Content Include="Assets\Style\user_setting_title_tab_bg.png" />
+    <Content Include="Assets\Style\user_team_top.png" />
+    <Content Include="Assets\Style\win_top.png" />
+    <Content Include="Assets\xheditor\jquery-1.4.4.min.js" />
+    <Content Include="Assets\xheditor\xheditor-1.1.14-zh-cn.min.js" />
+    <Content Include="Assets\xheditor\xheditor.js" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\angry.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\awkward.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\bye.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\config.txt" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\crazy.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\cry.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\curse.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\cute.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\despise.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\doubt.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\envy.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\fastcry.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\knock.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\laugh.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\mad.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\ohmy.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\panic.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\proud.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\quiet.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\sad.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\shutup.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\shy.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\sleep.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\smile.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\struggle.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\titter.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\tongue.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\wail.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\default\wronged.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\alien.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\angel.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\angry.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\bandit.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\biglaugh.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\blink.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\blush.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\config.txt" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\cool.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\cry.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\depres.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\devil.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\glare.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\heart.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\joyful.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\kiss.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\laugh.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\magician.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\ninja.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\pinch.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\police.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\sad.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\sick.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\sideways.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\sleep.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\smile.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\surprised.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\tongue.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\unsure.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\w00t.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\whistling.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\wondering.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\ipb\wub.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\1.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\10.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\11.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\12.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\13.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\14.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\15.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\16.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\17.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\18.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\19.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\2.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\20.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\21.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\22.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\23.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\24.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\25.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\26.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\27.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\28.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\29.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\3.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\30.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\31.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\32.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\33.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\34.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\35.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\36.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\37.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\38.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\39.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\4.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\40.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\5.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\6.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\7.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\8.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\msn\9.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\angry.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\bad.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\blush.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\brokenheart.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\bye.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\coffee.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\config.txt" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\cool.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\cry.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\curse.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\cute.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\devil.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\envy.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\gift.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\good.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\kiss.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\laugh.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\love.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\music.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\question.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\rose.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\sad.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\shocked.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\shout.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\sick.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\sleepy.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\smile.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\soccer.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\sweat.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\tired.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\tongue.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\victory.gif" />
+    <Content Include="Assets\xheditor\xheditor_emot\pidgin\wink.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\img\add.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\img\bg1.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\img\bg2.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\img\btnbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\img\btnbgr.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\img\clear.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\img\progressbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\img\start.gif" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\multiupload.css" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\multiupload.html" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\multiupload.js" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\swfupload\swfupload.js" />
+    <Content Include="Assets\xheditor\xheditor_plugins\multiupload\swfupload\swfupload.swf" />
+    <Content Include="Assets\xheditor\xheditor_plugins\ubb.min.js" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\iframe.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\anchor.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\close.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\flash.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\icons.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\loading.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\progress.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\progressbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-address.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-div.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-h1.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-h2.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-h3.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-h4.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-h5.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-h6.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-p.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\tag-pre.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\waiting.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\img\wmp.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\default\ui.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\iframe.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\anchor.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\close.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\flash.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\icons.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\loading.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\progress.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\progressbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-address.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-div.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-h1.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-h2.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-h3.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-h4.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-h5.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-h6.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-p.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\tag-pre.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\waiting.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\img\wmp.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\nostyle\ui.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\iframe.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\anchor.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\buttonbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\close.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\flash.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\icons.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\loading.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\progress.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\progressbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-address.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-div.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-h1.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-h2.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-h3.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-h4.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-h5.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-h6.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-p.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\tag-pre.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\waiting.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\img\wmp.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007blue\ui.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\iframe.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\anchor.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\buttonbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\close.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\flash.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\icons.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\loading.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\progress.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\progressbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-address.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-div.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-h1.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-h2.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-h3.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-h4.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-h5.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-h6.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-p.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\tag-pre.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\waiting.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\img\wmp.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\o2007silver\ui.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\iframe.css" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\anchor.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\buttonbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\close.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\flash.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\icons.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\loading.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\progress.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\progressbg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-address.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-div.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-h1.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-h2.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-h3.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-h4.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-h5.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-h6.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-p.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\tag-pre.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\titlebg.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\waiting.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\img\wmp.gif" />
+    <Content Include="Assets\xheditor\xheditor_skin\vista\ui.css" />
+    <Content Include="Controls\admin\upload.aspx" />
     <Content Include="References\System.Data.SQLite.DLL" />
     <Content Include="References\System.Data.SQLite.Linq.dll" />
     <Content Include="References\System.Data.SqlServerCe.dll" />
     <Content Include="Views\About.aspx" />
-    <Content Include="Assets\CSS\Site.css" />
+    <Content Include="Views\aboutus.aspx" />
+    <Content Include="Views\admin\AddNews.aspx" />
+    <Content Include="Views\admin\AddPaper.aspx" />
+    <Content Include="Views\admin\contactusList.aspx" />
+    <Content Include="Views\admin\EditNews.aspx" />
+    <Content Include="Views\admin\EditPaper.aspx" />
+    <Content Include="Views\admin\index.aspx" />
+    <Content Include="Views\admin\login.aspx" />
+    <Content Include="Views\admin\ManagePwd.aspx" />
+    <Content Include="Views\admin\NewsList.aspx" />
+    <Content Include="Views\admin\PaperList.aspx" />
+    <Content Include="Views\contactus.aspx" />
     <Content Include="Views\Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Assets\JS\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Assets\JS\jquery-1.4.1.js" />
-    <Content Include="Assets\JS\jquery-1.4.1.min.js" />
+    <Content Include="Views\index.aspx" />
+    <Content Include="Views\introduce.aspx" />
+    <Content Include="Views\news.aspx" />
+    <Content Include="Views\paper.aspx" />
+    <Content Include="Views\paper_detail.aspx" />
+    <Content Include="Views\products.aspx" />
+    <Content Include="Views\stores.aspx" />
     <Content Include="Views\WebForm1.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -77,19 +517,163 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\common.cs" />
-    <Compile Include="Controls\Database.cs" />
-    <Compile Include="Controls\Encrypt.cs" />
-    <Compile Include="Controls\JScript.cs" />
-    <Compile Include="Controls\SqlInject.cs" />
-    <Compile Include="Controls\SQLiteHelper.cs" />
-    <Compile Include="Controls\XSSInject.cs" />
+    <Compile Include="Controls\admin\AddNews.ashx.cs">
+      <DependentUpon>AddNews.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\admin\AddNewsAction.cs" />
+    <Compile Include="Controls\admin\AddPaper.ashx.cs">
+      <DependentUpon>AddPaper.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\admin\AddPaperAction.cs" />
+    <Compile Include="Controls\admin\login.ashx.cs">
+      <DependentUpon>login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\admin\loginAction.cs" />
+    <Compile Include="Controls\admin\ManagePwd.ashx.cs">
+      <DependentUpon>ManagePwd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\admin\ManagePwdAction.cs" />
+    <Compile Include="Controls\admin\upload.aspx.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\admin\upload.aspx.designer.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\admin\UploadPic.ashx.cs">
+      <DependentUpon>UploadPic.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\common.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ContactUs.ashx.cs">
+      <DependentUpon>ContactUs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContactUsAction.cs" />
+    <Compile Include="Controls\Database.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Encrypt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\JScript.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SqlInject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SQLiteHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\XSSInject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\NewsPaper.cs" />
     <Compile Include="Views\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\aboutus.aspx.cs">
+      <DependentUpon>aboutus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\aboutus.aspx.designer.cs">
+      <DependentUpon>aboutus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\AddNews.aspx.cs">
+      <DependentUpon>AddNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\AddNews.aspx.designer.cs">
+      <DependentUpon>AddNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\AddPaper.aspx.cs">
+      <DependentUpon>AddPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\AddPaper.aspx.designer.cs">
+      <DependentUpon>AddPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\adminBase.Master.cs">
+      <DependentUpon>adminBase.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\adminBase.Master.designer.cs">
+      <DependentUpon>adminBase.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\contactusList.aspx.cs">
+      <DependentUpon>contactusList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\contactusList.aspx.designer.cs">
+      <DependentUpon>contactusList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\EditNews.aspx.cs">
+      <DependentUpon>EditNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\EditNews.aspx.designer.cs">
+      <DependentUpon>EditNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\EditPaper.aspx.cs">
+      <DependentUpon>EditPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\EditPaper.aspx.designer.cs">
+      <DependentUpon>EditPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\ManagePwd.aspx.cs">
+      <DependentUpon>ManagePwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\ManagePwd.aspx.designer.cs">
+      <DependentUpon>ManagePwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\NewsList.aspx.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\NewsList.aspx.designer.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\PaperList.aspx.cs">
+      <DependentUpon>PaperList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin\PaperList.aspx.designer.cs">
+      <DependentUpon>PaperList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Base.Master.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Base.Master.designer.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\contactus.aspx.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\contactus.aspx.designer.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -102,12 +686,61 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\introduce.aspx.cs">
+      <DependentUpon>introduce.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\introduce.aspx.designer.cs">
+      <DependentUpon>introduce.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\news.aspx.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\news.aspx.designer.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\paper.aspx.cs">
+      <DependentUpon>paper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\paper.aspx.designer.cs">
+      <DependentUpon>paper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\paper_detail.aspx.cs">
+      <DependentUpon>paper_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\paper_detail.aspx.designer.cs">
+      <DependentUpon>paper_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\products.aspx.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\products.aspx.designer.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\stores.aspx.cs">
+      <DependentUpon>stores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\stores.aspx.designer.cs">
+      <DependentUpon>stores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -118,7 +751,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Site.Master" />
@@ -130,7 +763,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Data\MyDatabase.db" />
+    <None Include="Assets\CSS\MyDatabase.db" />
+    <Content Include="Views\Base.Master" />
+    <Content Include="Controls\admin\login.ashx" />
+    <Content Include="Views\admin\adminBase.Master" />
+    <Content Include="Controls\ContactUs.ashx" />
+    <Content Include="Controls\admin\AddPaper.ashx" />
+    <Content Include="Controls\admin\AddNews.ashx" />
+    <Content Include="Controls\admin\ManagePwd.ashx" />
+    <Content Include="Controls\admin\UploadPic.ashx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

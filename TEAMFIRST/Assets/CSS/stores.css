@@ -1,0 +1,47 @@
+﻿#index_wrapper {
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+}
+
+#store_blank
+{
+    width:auto;
+    height:204px;
+}
+
+#stores
+{
+    width: 534px; 
+    margin-left:247px;
+}
+.stores_font
+{
+    color:#fe6339;
+    font-family: 新細明體;
+}
+#stores #groupl li
+{
+    margin: 10px 0;
+    font-size : 14px;
+    font-family: 新細明體;
+    color: #696969;
+}
+#stores #groupr li
+{
+    margin: 10px 0;
+    font-size : 14px;
+    font-family: 新細明體;
+    color: #696969;
+}
+#groupl
+{
+    float: left;
+    width: 237px;    
+}
+#groupr
+{
+    float: right;
+    width: 237px;
+    margin-left:60px;
+}

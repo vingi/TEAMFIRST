@@ -1,0 +1,18 @@
+﻿#index_wrapper {
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    background-image:url(/Assets/Images/Index/index_product.png);
+}
+
+#index_blank {
+    width: 100%;
+    height:5px;
+}
+
+#index_honor {
+    width: 210px;
+    height:135px;
+    margin-left:30px;
+    background-image:url(/Assets/Images/Index/honor.png);
+}

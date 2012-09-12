@@ -1,0 +1,136 @@
+﻿#wrapper
+{
+    width: 1024px;
+    height:768px;
+    margin: 0 auto;
+    background-color:#FFF;
+}
+
+#content
+{
+    width: 100%;
+    height:520px;
+    background-image:url(/Assets/Images/Base/content_bg.png);
+}
+
+#navi
+{
+    width: 100%;
+    height:71px;
+    background-image:url(/Assets/Images/Base/navi_bg.png);
+    border-top:1px solid #e0e0e0;
+}
+
+#navi_left
+{
+    float: left;
+    font-size:13px;
+    width: 573px;
+    height:71px;
+    line-height:71px;
+    margin-left:199px;
+}
+
+#navi_left A:visited,A:active,A:link {
+	COLOR: #000;text-decoration: none;
+}
+#navi_left A:hover {
+	COLOR: #FFF;
+}
+
+#navi_right
+{
+    float: right;
+    width: 252px;
+    margin-top:12px;
+    height:46px;
+}
+
+#foot
+{
+    width: 962px;
+    margin-left:32px;
+    margin-top:4px;
+}
+#flower
+{
+    float: left;
+    width: 209px;
+    height: 149px;
+    background-image:url(/Assets/Images/Base/flower.png);
+}
+#buttons
+{
+    float: left;
+    height: 135px;
+    line-height:135px;
+    margin-left:11px;
+    margin-top:7px;
+}
+#button01 a,#button02 a,#button03 a,#button04 a
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#button01
+{
+    float: left;
+    width: 269px;
+    height: 135px;
+    background-image:url(/Assets/Images/Base/button01_black.png);
+}
+#button01:hover
+{
+    background-image:url(/Assets/Images/Base/button01_on.png);
+}
+#middle_button
+{
+    float: left;
+    margin-left:5px;
+    width:198px;
+    height: 135px;
+}
+#button02
+{
+    width: 198px;
+    height: 66px;
+    background-image:url(/Assets/Images/Base/button02_black.png);
+}
+#button02:hover
+{
+    background-image:url(/Assets/Images/Base/button02_on.png);
+}
+#button03
+{
+    width: 194px;
+    height: 66px;
+    margin-top:3px;
+    background-image:url(/Assets/Images/Base/button03_black.png);
+}
+#button03:hover
+{
+    background-image:url(/Assets/Images/Base/button03_on.png);
+}
+#button04
+{
+    float:right;
+    display:inline;
+    width: 269px;
+    height: 135px;
+    margin-left:1px;
+    background-image:url(/Assets/Images/Base/button04_black.png);
+}
+#button04:hover
+{
+    background-image:url(/Assets/Images/Base/button04_on.png);
+}
+
+#footline
+{
+    clear:both;
+    width: 960px;
+    height:1px;
+    margin-left:32px;
+    background-image:url(/Assets/Images/Base/foot_line.png);
+}

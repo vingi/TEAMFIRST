@@ -1,0 +1,150 @@
+﻿#prod_wrapper {
+    width: 100%;
+    height:100%;
+    margin: 0 auto;
+    overflow:hidden;
+    background-image:url(/Assets/Images/1-1.jpg);
+}
+#prod_content
+{
+    float:right;
+    margin-right:52px;
+    margin-top:15px;
+    width:276px;
+    height:100%;
+}
+#pre_page
+{
+    float:left;
+    width:9px;
+    height:34px;
+    margin-top:40px;
+    background-image:url(/Assets/Images/pre_page_sm.png);
+}
+#pre_page span
+{
+    display: inline-block;
+    width:9px;
+    height:34px;
+}
+#prod_list
+{
+    float:left;
+    width:237px;
+    margin-left:10px;
+    margin-right:10px;
+    color:#ff633b;
+    font-size:18px;
+    height:100%;
+}
+
+#prod_list A:visited,
+#prod_list A:active,
+#prod_list A:link {
+    color:#868686;
+	text-decoration: none;
+}
+#prod_list A:hover {
+    color:#868686;
+	text-decoration:underline;
+}
+#prod_tip
+{
+    float:right;
+    width:72px;
+}
+#prod_bar
+{
+    clear:both;
+    width:100%;
+    height:1px;
+    margin-top:5px;
+    margin-bottom:5px;
+    background-image:url(/Assets/Images/icon_yellow.png);
+}
+#prod_img
+{
+    width:174px;
+    height:52px;
+    margin-left:63px;
+    margin-bottom:5px;
+}
+#prod_img1
+{
+    float:left;
+    width:52px;
+    height:52px;
+    background-image:url(/Assets/Images/sm_1-1.png);
+}
+#prod_img2
+{
+    float:left;
+    width:52px;
+    height:52px;
+    margin-left:9px;
+    background-image:url(/Assets/Images/sm_1-2_b.png);
+}
+#prod_img3
+{
+    float:left;
+    width:52px;
+    height:52px;
+    margin-left:9px;
+    background-image:url(/Assets/Images/sm_1-3_b.png);
+}
+#prod_img span
+{
+    display: inline-block;
+    width:52px;
+    height:52px;
+}
+#prod_btn
+{
+    width:52px;
+    height:13px;
+    margin-left:63px;
+}
+#prod_btn1
+{
+    float:left;
+    width:14px;
+    height:13px;
+    background-image:url(/Assets/Images/icon_bt01.png);
+}
+#prod_btn2
+{
+    float:left;
+    width:14px;
+    height:13px;
+    margin-left:5px;
+    background-image:url(/Assets/Images/icon_bt02_b.png);
+}
+#prod_btn3
+{
+    float:left;
+    width:14px;
+    height:13px;
+    margin-left:5px;
+    background-image:url(/Assets/Images/icon_bt03_b.png);
+}
+#prod_btn span
+{
+    display: inline-block;
+    width:14px;
+    height:13px;
+}
+    
+#next_page
+{
+    float:right;
+    width:9px;
+    height:34px;
+    margin-top:40px;
+    background-image:url(/Assets/Images/next_page_sm.png);
+}
+#next_page span
+{
+    display: inline-block;
+    width:9px;
+    height:34px;
+}
