@@ -218,6 +218,13 @@
     <Content Include="Assets\Style\user_setting_title_tab_bg.png" />
     <Content Include="Assets\Style\user_team_top.png" />
     <Content Include="Assets\Style\win_top.png" />
+    <Content Include="Assets\uploadify\cancel.png" />
+    <Content Include="Assets\uploadify\close.png" />
+    <Content Include="Assets\uploadify\jquery.uploadify.js" />
+    <Content Include="Assets\uploadify\jquery.uploadify.min.js" />
+    <Content Include="Assets\uploadify\selectbtn.jpg" />
+    <Content Include="Assets\uploadify\uploadify.css" />
+    <Content Include="Assets\uploadify\uploadify.swf" />
     <Content Include="Assets\xheditor\jquery-1.4.4.min.js" />
     <Content Include="Assets\xheditor\xheditor-1.1.14-zh-cn.min.js" />
     <Content Include="Assets\xheditor\xheditor.js" />
@@ -517,6 +524,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\uploadify\ReceiveImage.ashx.cs">
+      <DependentUpon>ReceiveImage.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\admin\AddNews.ashx.cs">
       <DependentUpon>AddNews.ashx</DependentUpon>
     </Compile>
@@ -772,6 +782,10 @@
     <Content Include="Controls\admin\AddNews.ashx" />
     <Content Include="Controls\admin\ManagePwd.ashx" />
     <Content Include="Controls\admin\UploadPic.ashx" />
+    <Content Include="Assets\uploadify\ReceiveImage.ashx" />
+    <Content Include="Assets\uploadify\UploadHandler.ashx" />
+    <None Include="Assets\uploadify\uploadify-check-exists.php" />
+    <None Include="Assets\uploadify\uploadify.php" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

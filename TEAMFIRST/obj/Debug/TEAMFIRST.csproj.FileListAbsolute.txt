@@ -10,3 +10,5 @@ D:\hdms\TeamFirst\TEAMFIRST\bin\System.Data.SQLite.Linq.dll
 D:\hdms\TeamFirst\TEAMFIRST\obj\Debug\ResolveAssemblyReference.cache
 D:\hdms\TeamFirst\TEAMFIRST\obj\Debug\TEAMFIRST.dll
 D:\hdms\TeamFirst\TEAMFIRST\obj\Debug\TEAMFIRST.pdb
+D:\Project\TEAMFIRST\TEAMFIRST\bin\System.Data.SQLite.DLL
+D:\Project\TEAMFIRST\TEAMFIRST\bin\System.Data.SQLite.Linq.dll
