@@ -37,660 +37,661 @@ THE SOFTWARE.
 
 if (jQuery) (
 	function (jQuery) {
-	    jQuery.extend(jQuery.fn, {
-	        uploadify: function (options, swfUploadOptions) {
-	            jQuery(this).each(function () {
-	                var clone = jQuery(this).clone();
-	                var settings = jQuery.extend({
-	                    // Required Settings
-	                    id: jQuery(this).attr('id'),
-	                    swf: 'uploadify.swf',
-	                    uploader: 'uploadify.php',
+		jQuery.extend(jQuery.fn, {
+			uploadify: function (options, swfUploadOptions) {
+				jQuery(this).each(function () {
+					var clone = jQuery(this).clone();
+					var settings = jQuery.extend({
+						// Required Settings
+						id: jQuery(this).attr('id'),
+						swf: 'uploadify.swf',
+						uploader: 'uploadify.php',
 
-	                    // Options
-	                    auto: false,
-	                    buttonClass: '',
-	                    buttonCursor: 'pointer',
-	                    buttonImage: null,
-	                    buttonText: 'SELECT FILES',
-	                    cancelImage: 'uploadify-cancel.png',
-	                    checkExisting: 'uploadify-check-existing.php',
-	                    debug: false,
-	                    fileObjName: 'Filedata',
-	                    fileSizeLimit: 0,
-	                    fileTypeDesc: 'All Files (*.*)',
-	                    fileTypeExts: '*.*',
-	                    height: 30,
-	                    method: 'post',
-	                    multi: false,
-	                    queueID: false,
-	                    queueSizeLimit: 999,
-	                    removeCompleted: true,
-	                    removeTimeout: 3,
-	                    requeueErrors: false,
-	                    postData: {},
-	                    preventCaching: true,
-	                    progressData: 'percentage',
-	                    //simUploadLimit  : 12, // Not possible with swfUpload
-	                    successTimeout: 30,
-	                    transparent: true,
-	                    uploadLimit: 999,
-	                    uploaderType: 'html5', // the other option is 'flash'
-	                    width: 120,
+						// Options
+						auto: false,
+						buttonClass: '',
+						buttonCursor: 'pointer',
+						buttonImage: null,
+						buttonText: 'SELECT FILES',
+						cancelImage: 'uploadify-cancel.png',
+						checkExisting: 'uploadify-check-existing.php',
+						debug: false,
+						fileObjName: 'Filedata',
+						fileSizeLimit: 0,
+						fileTypeDesc: 'All Files (*.*)',
+						fileTypeExts: '*.*',
+						height: 30,
+						method: 'post',
+						multi: false,
+						queueID: false,
+						queueSizeLimit: 999,
+						removeCompleted: true,
+						removeTimeout: 3,
+						requeueErrors: false,
+						postData: {},
+						preventCaching: true,
+						progressData: 'percentage',
+						//simUploadLimit  : 12, // Not possible with swfUpload
+						successTimeout: 30,
+						transparent: true,
+						uploadLimit: 999,
+						uploaderType: 'html5', // the other option is 'flash'
+						width: 120,
 
-	                    // Events
-	                    skipDefault: [],
-	                    onClearQueue: function () { },
-	                    onDialogOpen: function () { },
-	                    onDialogClose: function () { },
-	                    onInit: function () { },
-	                    onQueueComplete: function () { },
-	                    onSelectError: function () { },
-	                    onSelect: function () { },
-	                    onSWFReady: function () { },
-	                    onUploadCancel: function () { },
-	                    onUploadComplete: function () { },
-	                    onUploadError: function () { },
-	                    onUploadProgress: function () { },
-	                    onUploadStart: function () { }
-	                }, options);
+						// Events
+						skipDefault: [],
+						onClearQueue: function () { },
+						onDialogOpen: function () { },
+						onDialogClose: function () { },
+						onInit: function () { },
+						onQueueComplete: function () { },
+						onSelectError: function () { },
+						onSelect: function () { },
+						onSWFReady: function () { },
+						onUploadCancel: function () { },
+						onUploadComplete: function () { },
+						onUploadError: function () { },
+						onUploadProgress: function () { },
+						onUploadStart: function () { }
+					}, options);
 
-	                var swfUploadSettings = {
-	                    assume_success_timeout: settings.successTimeout,
-	                    button_placeholder_id: settings.id,
-	                    button_image_url: settings.buttonImage,
-	                    button_width: settings.width,
-	                    button_height: settings.height,
-	                    button_text: null,
-	                    button_text_style: null,
-	                    button_text_top_padding: 0,
-	                    button_text_left_padding: 0,
-	                    button_action: (settings.multi ? SWFUpload.BUTTON_ACTION.SELECT_FILES : SWFUpload.BUTTON_ACTION.SELECT_FILE),
-	                    button_disabled: false,
-	                    button_cursor: (settings.buttonCursor == 'arrow' ? SWFUpload.CURSOR.ARROW : SWFUpload.CURSOR.HAND),
-	                    button_window_mode: (settings.transparent && !settings.buttonImage ? SWFUpload.WINDOW_MODE.TRANSPARENT : SWFUpload.WINDOW_MODE.OPAQUE),
-	                    debug: settings.debug,
-	                    requeue_on_error: settings.requeueErrors,
-	                    file_post_name: settings.fileObjName,
-	                    file_size_limit: settings.fileSizeLimit,
-	                    file_types: settings.fileTypeExts,
-	                    file_types_description: settings.fileTypeDesc,
-	                    file_queue_limit: settings.queueSizeLimit,
-	                    file_upload_limit: settings.uploadLimit,
-	                    flash_url: settings.swf,
-	                    prevent_swf_caching: settings.preventCaching,
-	                    post_params: settings.postData,
-	                    upload_url: settings.uploader,
-	                    use_query_string: (settings.method == 'get'),
+					var swfUploadSettings = {
+						assume_success_timeout: settings.successTimeout,
+						button_placeholder_id: settings.id,
+						button_image_url: settings.buttonImage,
+						button_width: settings.width,
+						button_height: settings.height,
+						button_text: null,
+						button_text_style: null,
+						button_text_top_padding: 0,
+						button_text_left_padding: 0,
+						button_action: (settings.multi ? SWFUpload.BUTTON_ACTION.SELECT_FILES : SWFUpload.BUTTON_ACTION.SELECT_FILE),
+						button_disabled: false,
+						button_cursor: (settings.buttonCursor == 'arrow' ? SWFUpload.CURSOR.ARROW : SWFUpload.CURSOR.HAND),
+						button_window_mode: (settings.transparent && !settings.buttonImage ? SWFUpload.WINDOW_MODE.TRANSPARENT : SWFUpload.WINDOW_MODE.OPAQUE),
+						debug: settings.debug,
+						requeue_on_error: settings.requeueErrors,
+						file_post_name: settings.fileObjName,
+						file_size_limit: settings.fileSizeLimit,
+						file_types: settings.fileTypeExts,
+						file_types_description: settings.fileTypeDesc,
+						file_queue_limit: settings.queueSizeLimit,
+						file_upload_limit: settings.uploadLimit,
+						flash_url: settings.swf,
+						prevent_swf_caching: settings.preventCaching,
+						post_params: settings.postData,
+						upload_url: settings.uploader,
+						use_query_string: (settings.method == 'get'),
 
-	                    // Event Handlers 
-	                    file_dialog_complete_handler: onDialogClose,
-	                    file_dialog_start_handler: onDialogOpen,
-	                    file_queued_handler: onSelect,
-	                    file_queue_error_handler: onSelectError,
-	                    flash_ready_handler: settings.onSWFReady,
-	                    upload_complete_handler: onUploadComplete,
-	                    upload_error_handler: onUploadError,
-	                    upload_progress_handler: onUploadProgress,
-	                    upload_start_handler: onUploadStart,
-	                    upload_success_handler: onUploadSuccess
-	                }
-	                if (swfUploadOptions) {
-	                    swfUploadSettings = jQuery.extend(swfUploadSettings, swfUploadOptions);
-	                }
-	                swfUploadSettings = jQuery.extend(swfUploadSettings, settings);
+						// Event Handlers 
+						file_dialog_complete_handler: onDialogClose,
+						file_dialog_start_handler: onDialogOpen,
+						file_queued_handler: onSelect,
+						file_queue_error_handler: onSelectError,
+						flash_ready_handler: settings.onSWFReady,
+						upload_complete_handler: onUploadComplete,
+						upload_error_handler: onUploadError,
+						upload_progress_handler: onUploadProgress,
+						upload_start_handler: onUploadStart,
+						upload_success_handler: onUploadSuccess
+					}
+					if (swfUploadOptions) {
+						swfUploadSettings = jQuery.extend(swfUploadSettings, swfUploadOptions);
+					}
+					swfUploadSettings = jQuery.extend(swfUploadSettings, settings);
 
-	                // Create the swfUpload instance
-	                window['uploadify_' + settings.id] = new SWFUpload(swfUploadSettings);
-	                var swfuploadify = window['uploadify_' + settings.id];
-	                swfuploadify.original = clone;
+					// Create the swfUpload instance
+					window['uploadify_' + settings.id] = new SWFUpload(swfUploadSettings);
+					var swfuploadify = window['uploadify_' + settings.id];
+					swfuploadify.original = clone;
 
-	                // Wrap the uploadify instance
-	                var wrapper = jQuery('<div />', {
-	                    id: settings.id,
-	                    'class': 'uploadify',
-	                    css: {
-	                        'height': settings.height + 'px',
-	                        'position': 'relative',
-	                        'width': settings.width + 'px'
-	                    }
-	                });
-	                jQuery('#' + swfuploadify.movieName).wrap(wrapper);
+					// Wrap the uploadify instance
+					var wrapper = jQuery('<div />', {
+						id: settings.id,
+						'class': 'uploadify',
+						css: {
+							'height': settings.height + 'px',
+							'position': 'relative',
+							'width': settings.width + 'px'
+						}
+					});
+					jQuery('#' + swfuploadify.movieName).wrap(wrapper);
 
-	                // Create the file queue
-	                if (!settings.queueID) {
-	                    var queue = jQuery('<div />', {
-	                        id: settings.id + '_queue',
-	                        'class': 'uploadifyQueue'
-	                    });
-	                    jQuery('#' + settings.id).after(queue);
-	                    swfuploadify.settings.queueID = settings.queueID = settings.id + '_queue';
-	                }
+					// Create the file queue
+					if (!settings.queueID) {
+						var queue = jQuery('<div />', {
+							id: settings.id + '_queue',
+							'class': 'uploadifyQueue'
+						});
+						jQuery('#' + settings.id).after(queue);
+						swfuploadify.settings.queueID = settings.queueID = settings.id + '_queue';
+					}
 
-	                // Create some queue related objects and variables
-	                swfuploadify.queue = {
-	                    files: {}, // The files in the queue
-	                    filesSelected: 0, // The number of files selected in the last select operation
-	                    filesQueued: 0, // The number of files added to the queue in the last select operation
-	                    filesReplaced: 0, // The number of files replaced in the last select operation
-	                    filesCancelled: 0, // The number of files that were cancelled instead of replaced
-	                    filesErrored: 0, // The number of files that caused error in the last select operation
-	                    averageSpeed: 0, // The average speed of the uploads in KB
-	                    queueLength: 0, // The number of files in the queue
-	                    queueSize: 0, // The size in bytes of the entire queue
-	                    uploadSize: 0, // The size in bytes of the upload queue
-	                    queueBytesUploaded: 0, // The size in bytes that have been uploaded for the current upload queue
-	                    uploadQueue: [], // The files currently to be uploaded
-	                    errorMsg: 'Some files were not added to the queue:'
-	                };
+					// Create some queue related objects and variables
+					swfuploadify.queue = {
+						files: {}, // The files in the queue
+						filesSelected: 0, // The number of files selected in the last select operation
+						filesQueued: 0, // The number of files added to the queue in the last select operation
+						filesReplaced: 0, // The number of files replaced in the last select operation
+						filesCancelled: 0, // The number of files that were cancelled instead of replaced
+						filesErrored: 0, // The number of files that caused error in the last select operation
+						averageSpeed: 0, // The average speed of the uploads in KB
+						queueLength: 0, // The number of files in the queue
+						queueSize: 0, // The size in bytes of the entire queue
+						uploadSize: 0, // The size in bytes of the upload queue
+						queueBytesUploaded: 0, // The size in bytes that have been uploaded for the current upload queue
+						uploadQueue: [], // The files currently to be uploaded
+						errorMsg: 'Some files were not added to the queue:'
+					};
 
-	                // Create the button
-	                if (!settings.buttonImage) {
-	                    var button = jQuery('<div />', {
-	                        id: settings.id + '_button',
-	                        'class': 'uploadifyButton ' + settings.buttonClass,
-	                        html: '<span class="uploadifyButtonText">' + settings.buttonText + '</span>'
-	                    });
-	                    jQuery('#' + settings.id).append(button);
-	                    jQuery('#' + swfuploadify.movieName).css({ position: 'absolute', 'z-index': 1 });
-	                } else {
-	                    jQuery('#' + swfuploadify.movieName).addClass(settings.buttonClass);
-	                }
+					// Create the button
+					if (!settings.buttonImage) {
+						var button = jQuery('<div />', {
+							id: settings.id + '_button',
+							'class': 'uploadifyButton ' + settings.buttonClass,
+							html: '<span class="uploadifyButtonText">' + settings.buttonText + '</span>'
+						});
+						jQuery('#' + settings.id).append(button);
+						jQuery('#' + swfuploadify.movieName).css({ position: 'absolute', 'z-index': 1 });
+					} else {
+						jQuery('#' + swfuploadify.movieName).addClass(settings.buttonClass);
+					}
 
-	                //绑定删除方法 控制取消队列按钮的显示
-	                jQuery(".uploadifyQueueItem").live({
-	                    mouseenter: function () {
-	                        jQuery(this).find(".cancel").show();
-	                    },
-	                    mouseleave: function () {
-	                        jQuery(this).find(".cancel").hide();
-	                    }
-	                });
+					//绑定删除方法 控制取消队列按钮的显示
+					jQuery(".uploadifyQueueItem").live({
+						mouseenter: function () {
+							jQuery(this).find(".cancel").show();
+						},
+						mouseleave: function () {
+							jQuery(this).find(".cancel").hide();
+						}
+					});
 
-	                // -----------------------------
-	                // Begin Event Handler Functions
-	                // -----------------------------
+					// -----------------------------
+					// Begin Event Handler Functions
+					// -----------------------------
 
-	                // Triggered once when file dialog is closed
-	                function onDialogClose(filesSelected, filesQueued, queueLength) {
-	                    var stats = swfuploadify.getStats();
-	                    swfuploadify.queue.filesErrored = filesSelected - filesQueued;
-	                    swfuploadify.queue.filesSelected = filesSelected;
-	                    swfuploadify.queue.filesQueued = filesQueued - swfuploadify.queue.filesCancelled;
-	                    swfuploadify.queue.queueLength = queueLength;
-	                    if (jQuery.inArray('onDialogClose', swfuploadify.settings.skipDefault) < 0) {
-	                        if (swfuploadify.queue.filesErrored > 0) {
-	                            alert(swfuploadify.queue.errorMsg);
-	                        }
-	                    }
-	                    if (swfuploadify.settings.onDialogClose) swfuploadify.settings.onDialogClose(swfuploadify.queue);
-	                    if (swfuploadify.settings.auto) jQuery('#' + swfuploadify.settings.id).uploadifyUpload('*');
-	                }
+					// Triggered once when file dialog is closed
+					function onDialogClose(filesSelected, filesQueued, queueLength) {
+						var stats = swfuploadify.getStats();
+						swfuploadify.queue.filesErrored = filesSelected - filesQueued;
+						swfuploadify.queue.filesSelected = filesSelected;
+						swfuploadify.queue.filesQueued = filesQueued - swfuploadify.queue.filesCancelled;
+						swfuploadify.queue.queueLength = queueLength;
+						if (jQuery.inArray('onDialogClose', swfuploadify.settings.skipDefault) < 0) {
+							if (swfuploadify.queue.filesErrored > 0) {
+								alert(swfuploadify.queue.errorMsg);
+							}
+						}
+						if (swfuploadify.settings.onDialogClose) swfuploadify.settings.onDialogClose(swfuploadify.queue);
+						if (swfuploadify.settings.auto) jQuery('#' + swfuploadify.settings.id).uploadifyUpload('*');
+					}
 
-	                function onDialogOpen() {
-	                    // Reset some queue info
-	                    swfuploadify.queue.errorMsg = 'Some files were not added to the queue:';
-	                    swfuploadify.queue.filesReplaced = 0;
-	                    swfuploadify.queue.filesCancelled = 0;
-	                    if (swfuploadify.settings.onDialogOpen) swfuploadify.settings.onDialogOpen();
-	                }
+					function onDialogOpen() {
+						// Reset some queue info
+						swfuploadify.queue.errorMsg = 'Some files were not added to the queue:';
+						swfuploadify.queue.filesReplaced = 0;
+						swfuploadify.queue.filesCancelled = 0;
+						if (swfuploadify.settings.onDialogOpen) swfuploadify.settings.onDialogOpen();
+					}
 
-	                // Triggered once for each file added to the queue
-	                function onSelect(file) {
-	                    if (jQuery.inArray('onSelect', swfuploadify.settings.skipDefault) < 0) {
-	                        // Check if a file with the same name exists in the queue
-	                        var queuedFile = {};
-	                        for (var n in swfuploadify.queue.files) {
-	                            queuedFile = swfuploadify.queue.files[n];
-	                            if (queuedFile.name == file.name) {
-	                                var replaceQueueItem = confirm('The file named "' + file.name + '" is already in the queue.\nDo you want to replace the existing item in the queue?');
-	                                if (!replaceQueueItem) {
-	                                    swfuploadify.cancelUpload(file.id);
-	                                    swfuploadify.queue.filesCancelled++;
-	                                    return false;
-	                                } else {
-	                                    jQuery('#' + queuedFile.id).remove();
-	                                    swfuploadify.cancelUpload(queuedFile.id);
-	                                    swfuploadify.queue.filesReplaced++;
-	                                }
-	                            }
-	                        }
+					// Triggered once for each file added to the queue
+					function onSelect(file) {
+						if (jQuery.inArray('onSelect', swfuploadify.settings.skipDefault) < 0) {
+							// Check if a file with the same name exists in the queue
+							var queuedFile = {};
+							for (var n in swfuploadify.queue.files) {
+								queuedFile = swfuploadify.queue.files[n];
+								if (queuedFile.name == file.name) {
+									var replaceQueueItem = true;
+									if (!replaceQueueItem) {
+										swfuploadify.cancelUpload(file.id);
+										swfuploadify.queue.filesCancelled++;
+										return false;
+									} else {
+										jQuery('#' + queuedFile.id).remove();
+										swfuploadify.cancelUpload(queuedFile.id);
+										swfuploadify.queue.filesReplaced++;
+									}
+								}
+							}
 
-	                        // Get the size of the file
-	                        var fileSize = Math.round(file.size / 1024);
-	                        var suffix = 'KB';
-	                        if (fileSize > 1000) {
-	                            fileSize = Math.round(fileSize / 1000);
-	                            suffix = 'MB';
-	                        }
-	                        var fileSizeParts = fileSize.toString().split('.');
-	                        fileSize = fileSizeParts[0];
-	                        if (fileSizeParts.length > 1) {
-	                            fileSize += '.' + fileSizeParts[1].substr(0, 2);
-	                        }
-	                        fileSize += suffix;
+							// Get the size of the file
+							var fileSize = Math.round(file.size / 1024);
+							var suffix = 'KB';
+							if (fileSize > 1000) {
+								fileSize = Math.round(fileSize / 1000);
+								suffix = 'MB';
+							}
+							var fileSizeParts = fileSize.toString().split('.');
+							fileSize = fileSizeParts[0];
+							if (fileSizeParts.length > 1) {
+								fileSize += '.' + fileSizeParts[1].substr(0, 2);
+							}
+							fileSize += suffix;
 
-	                        // Truncate the filename if it's too long
-	                        var fileName = file.name;
-	                        if (fileName.length > 25) {
-	                            fileName = fileName.substr(0, 25) + '...';
-	                        }
+							// Truncate the filename if it's too long
+							var fileName = file.name;
+							if (fileName.length > 25) {
+								fileName = fileName.substr(0, 25) + '...';
+							}
 
-	                        // Add the file item to the queue
-	                        jQuery('#' + swfuploadify.settings.queueID).append('<div id="' + file.id + '" class="uploadifyQueueItem">\
+							// Add the file item to the queue
+							jQuery('#' + swfuploadify.settings.queueID).append('<div id="' + file.id + '" class="uploadifyQueueItem">\
 								<div class="cancel" onclick="jQuery(\'#' + swfuploadify.settings.id + '\').uploadifyCancel(\'' + file.id + '\')">\
 									<img src="' + swfuploadify.settings.cancelImage + '" border="0" />\
 								</div>\
-                                <div class="uploadifyImageShow"></div>\
+								<div class="uploadifyImageShow"></div>\
 								<span class="fileName">' + fileName + ' (' + fileSize + ')</span><span class="data"></span>\
 								<div class="uploadifyProgress">\
 									<div class="uploadifyProgressBar"><!--Progress Bar--></div>\
 								</div>\
 							</div>');
-	                        swfuploadify.queue.queueSize += file.size;
-	                    }
-	                    swfuploadify.queue.files[file.id] = file;
-	                    if (swfuploadify.settings.onSelect) swfuploadify.settings.onSelect(file);
-	                }
+							swfuploadify.queue.queueSize += file.size;
+						}
+						swfuploadify.queue.files[file.id] = file;
+						if (swfuploadify.settings.onSelect) swfuploadify.settings.onSelect(file);
+					}
 
-	                // Triggered when a file is not added to the queue
-	                function onSelectError(file, errorCode, errorMsg) {
-	                    if (jQuery.inArray('onSelectError', swfuploadify.settings.skipDefault) < 0) {
-	                        switch (errorCode) {
-	                            case SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED:
-	                                if (swfuploadify.settings.queueSizeLimit > errorMsg) {
-	                                    swfuploadify.queue.errorMsg += '\nThe number of files selected exceeds the remaining upload limit (' + errorMsg + ').';
-	                                } else {
-	                                    swfuploadify.queue.errorMsg += '\nThe number of files selected exceeds the queue size limit (' + swfuploadify.settings.queueSizeLimit + ').';
-	                                }
-	                                break;
-	                            case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
-	                                swfuploadify.queue.errorMsg += '\nThe file "' + file.name + '" exceeds the size limit (' + swfuploadify.settings.fileSizeLimit + ').';
-	                                break;
-	                            case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
-	                                swfuploadify.queue.errorMsg += '\nThe file "' + file.name + '" is empty.';
-	                                break;
-	                            case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
-	                                swfuploadify.queue.errorMsg += '\nThe file "' + file.name + '" is not an accepted file type (' + swfuploadify.settings.fileTypeDesc + ').';
-	                                break;
-	                        }
-	                    }
-	                    if (errorCode != SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED) {
-	                        delete swfuploadify.queue.files[file.id];
-	                    }
-	                    if (swfuploadify.settings.onSelectError) swfuploadify.settings.onSelectError(file, errorCode, errorMsg);
-	                }
+					// Triggered when a file is not added to the queue
+					function onSelectError(file, errorCode, errorMsg) {
+						if (jQuery.inArray('onSelectError', swfuploadify.settings.skipDefault) < 0) {
+							switch (errorCode) {
+								case SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED:
+									if (swfuploadify.settings.queueSizeLimit > errorMsg) {
+										swfuploadify.queue.errorMsg += '\nThe number of files selected exceeds the remaining upload limit (' + errorMsg + ').';
+									} else {
+										swfuploadify.queue.errorMsg += '\nThe number of files selected exceeds the queue size limit (' + swfuploadify.settings.queueSizeLimit + ').';
+									}
+									break;
+								case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
+									swfuploadify.queue.errorMsg += '\nThe file "' + file.name + '" exceeds the size limit (' + swfuploadify.settings.fileSizeLimit + ').';
+									break;
+								case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
+									swfuploadify.queue.errorMsg += '\nThe file "' + file.name + '" is empty.';
+									break;
+								case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
+									swfuploadify.queue.errorMsg += '\nThe file "' + file.name + '" is not an accepted file type (' + swfuploadify.settings.fileTypeDesc + ').';
+									break;
+							}
+						}
+						if (errorCode != SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED) {
+							delete swfuploadify.queue.files[file.id];
+						}
+						if (swfuploadify.settings.onSelectError) swfuploadify.settings.onSelectError(file, errorCode, errorMsg);
+					}
 
-	                // Triggered when all the files in the queue have been processed
-	                function onQueueComplete() {
-	                    var stats = swfuploadify.getStats();
-	                    if (swfuploadify.settings.onQueueComplete) swfuploadify.settings.onQueueComplete(stats);
-	                }
+					// Triggered when all the files in the queue have been processed
+					function onQueueComplete() {
+						var stats = swfuploadify.getStats();
+						if (swfuploadify.settings.onQueueComplete) swfuploadify.settings.onQueueComplete(stats);
+					}
 
-	                // Triggered when a file upload successfully completes
-	                function onUploadComplete(file) {
-	                    var stats = swfuploadify.getStats();
-	                    swfuploadify.queue.queueLength = stats.files_queued;
-	                    if (swfuploadify.queue.uploadQueue[0] == '*') {
-	                        if (swfuploadify.queue.queueLength > 0) {
-	                            swfuploadify.startUpload();
-	                        } else {
-	                            swfuploadify.queue.uploadQueue = [];
-	                            if (swfuploadify.settings.onQueueComplete) swfuploadify.settings.onQueueComplete(stats);
-	                        }
-	                    } else {
-	                        if (swfuploadify.queue.uploadQueue.length > 0) {
-	                            swfuploadify.startUpload(swfuploadify.queue.uploadQueue.shift());
-	                        } else {
-	                            swfuploadify.queue.uploadQueue = [];
-	                            if (swfuploadify.settings.onQueueComplete) setting.onQueueComplete(stats);
-	                        }
-	                    }
-	                    if (jQuery.inArray('onUploadComplete', swfuploadify.settings.skipDefault) < 0) {
-	                        if (swfuploadify.settings.removeCompleted) {
-	                            switch (file.filestatus) {
-	                                case SWFUpload.FILE_STATUS.COMPLETE:
-	                                    setTimeout(function () {
-	                                        if (jQuery('#' + file.id)) {
-	                                            swfuploadify.queue.queueSize -= file.size;
-	                                            delete swfuploadify.queue.files[file.id]
-	                                            jQuery('#' + file.id).fadeOut(500, function () {
-	                                                jQuery(this).remove();
-	                                            });
-	                                        }
-	                                    }, swfuploadify.settings.removeTimeout * 1000);
-	                                    break;
-	                                case SWFUpload.FILE_STATUS.ERROR:
-	                                    if (!swfuploadify.settings.requeueErrors) {
-	                                        setTimeout(function () {
-	                                            if (jQuery('#' + file.id)) {
-	                                                swfuploadify.queue.queueSize -= file.size;
-	                                                delete swfuploadify.queue.files[file.id];
-	                                                jQuery('#' + file.id).fadeOut(500, function () {
-	                                                    jQuery(this).remove();
-	                                                });
-	                                            }
-	                                        }, swfuploadify.settings.removeTimeout * 1000);
-	                                    }
-	                                    break;
-	                            }
-	                        }
-	                    }
-	                    if (swfuploadify.settings.onUploadComplete) swfuploadify.settings.onUploadComplete(file, swfuploadify.queue);
-	                }
+					// Triggered when a file upload successfully completes
+					function onUploadComplete(file) {
+						var stats = swfuploadify.getStats();
+						swfuploadify.queue.queueLength = stats.files_queued;
+						if (swfuploadify.queue.uploadQueue[0] == '*') {
+							if (swfuploadify.queue.queueLength > 0) {
+								swfuploadify.startUpload();
+							} else {
+								swfuploadify.queue.uploadQueue = [];
+								if (swfuploadify.settings.onQueueComplete) swfuploadify.settings.onQueueComplete(stats);
+							}
+						} else {
+							if (swfuploadify.queue.uploadQueue.length > 0) {
+								swfuploadify.startUpload(swfuploadify.queue.uploadQueue.shift());
+							} else {
+								swfuploadify.queue.uploadQueue = [];
+								if (swfuploadify.settings.onQueueComplete) setting.onQueueComplete(stats);
+							}
+						}
+						if (jQuery.inArray('onUploadComplete', swfuploadify.settings.skipDefault) < 0) {
+							if (swfuploadify.settings.removeCompleted) {
+								switch (file.filestatus) {
+									case SWFUpload.FILE_STATUS.COMPLETE:
+										setTimeout(function () {
+											if (jQuery('#' + file.id)) {
+												swfuploadify.queue.queueSize -= file.size;
+												delete swfuploadify.queue.files[file.id]
+												jQuery('#' + file.id).fadeOut(500, function () {
+													jQuery(this).remove();
+												});
+											}
+										}, swfuploadify.settings.removeTimeout * 1000);
+										break;
+									case SWFUpload.FILE_STATUS.ERROR:
+										if (!swfuploadify.settings.requeueErrors) {
+											setTimeout(function () {
+												if (jQuery('#' + file.id)) {
+													swfuploadify.queue.queueSize -= file.size;
+													delete swfuploadify.queue.files[file.id];
+													jQuery('#' + file.id).fadeOut(500, function () {
+														jQuery(this).remove();
+													});
+												}
+											}, swfuploadify.settings.removeTimeout * 1000);
+										}
+										break;
+								}
+							}
+						}
+						if (swfuploadify.settings.onUploadComplete) swfuploadify.settings.onUploadComplete(file, swfuploadify.queue);
+					}
 
-	                // Triggered when a file upload returns an error
-	                function onUploadError(file, errorCode, errorMsg) {
-	                    var errorString = 'Error';
-	                    if (errorCode != SWFUpload.UPLOAD_ERROR.FILE_CANCELLED && errorCode != SWFUpload.UPLOAD_ERROR.UPLOAD_STOPPED) {
-	                        jQuery('#' + file.id).addClass('uploadifyError');
-	                    }
-	                    jQuery('#' + file.id).find('.uploadifyProgressBar').css('width', '1px');
-	                    switch (errorCode) {
-	                        case SWFUpload.UPLOAD_ERROR.HTTP_ERROR:
-	                            errorString = 'HTTP Error (' + errorMsg + ')';
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.MISSING_UPLOAD_URL:
-	                            errorString = 'Missing Upload URL';
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.IO_ERROR:
-	                            errorString = 'IO Error';
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.SECURITY_ERROR:
-	                            errorString = 'Security Error';
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.UPLOAD_LIMIT_EXCEEDED:
-	                            alert('The upload limit has been reached (' + errorMsg + ').');
-	                            errorString = 'Exceeds Upload Limit';
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.UPLOAD_FAILED:
-	                            errorString = 'Failed';
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.SPECIFIED_FILE_ID_NOT_FOUND:
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.FILE_VALIDATION_FAILED:
-	                            errorString = 'Validation Error';
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.FILE_CANCELLED:
-	                            errorString = 'Cancelled';
-	                            swfuploadify.queue.queueSize -= file.size;
-	                            if (file.status == SWFUpload.FILE_STATUS.IN_PROGRESS || jQuery.inArray(file.id, swfuploadify.queue.uploadQueue) >= 0) {
-	                                swfuploadify.queue.uploadSize -= file.size;
-	                            }
-	                            delete swfuploadify.queue.files[file.id];
-	                            break;
-	                        case SWFUpload.UPLOAD_ERROR.UPLOAD_STOPPED:
-	                            errorString = 'Stopped';
-	                            break;
-	                    }
-	                    if (errorCode != SWFUpload.UPLOAD_ERROR.SPECIFIED_FILE_ID_NOT_FOUND && file.status != SWFUpload.FILE_STATUS.COMPLETE) {
-	                        jQuery('#' + file.id).find('.data').html(' - ' + errorString);
-	                    }
-	                    if (swfuploadify.settings.onUploadError) swfuploadify.settings.onUploadError(file, errorCode, errorMsg, errorString, swfuploadify.queue);
-	                }
+					// Triggered when a file upload returns an error
+					function onUploadError(file, errorCode, errorMsg) {
+						var errorString = 'Error';
+						if (errorCode != SWFUpload.UPLOAD_ERROR.FILE_CANCELLED && errorCode != SWFUpload.UPLOAD_ERROR.UPLOAD_STOPPED) {
+							jQuery('#' + file.id).addClass('uploadifyError');
+						}
+						jQuery('#' + file.id).find('.uploadifyProgressBar').css('width', '1px');
+						switch (errorCode) {
+							case SWFUpload.UPLOAD_ERROR.HTTP_ERROR:
+								errorString = 'HTTP Error (' + errorMsg + ')';
+								break;
+							case SWFUpload.UPLOAD_ERROR.MISSING_UPLOAD_URL:
+								errorString = 'Missing Upload URL';
+								break;
+							case SWFUpload.UPLOAD_ERROR.IO_ERROR:
+								errorString = 'IO Error';
+								break;
+							case SWFUpload.UPLOAD_ERROR.SECURITY_ERROR:
+								errorString = 'Security Error';
+								break;
+							case SWFUpload.UPLOAD_ERROR.UPLOAD_LIMIT_EXCEEDED:
+								alert('The upload limit has been reached (' + errorMsg + ').');
+								errorString = 'Exceeds Upload Limit';
+								break;
+							case SWFUpload.UPLOAD_ERROR.UPLOAD_FAILED:
+								errorString = 'Failed';
+								break;
+							case SWFUpload.UPLOAD_ERROR.SPECIFIED_FILE_ID_NOT_FOUND:
+								break;
+							case SWFUpload.UPLOAD_ERROR.FILE_VALIDATION_FAILED:
+								errorString = 'Validation Error';
+								break;
+							case SWFUpload.UPLOAD_ERROR.FILE_CANCELLED:
+								errorString = 'Cancelled';
+								swfuploadify.queue.queueSize -= file.size;
+								if (file.status == SWFUpload.FILE_STATUS.IN_PROGRESS || jQuery.inArray(file.id, swfuploadify.queue.uploadQueue) >= 0) {
+									swfuploadify.queue.uploadSize -= file.size;
+								}
+								delete swfuploadify.queue.files[file.id];
+								break;
+							case SWFUpload.UPLOAD_ERROR.UPLOAD_STOPPED:
+								errorString = 'Stopped';
+								break;
+						}
+						if (errorCode != SWFUpload.UPLOAD_ERROR.SPECIFIED_FILE_ID_NOT_FOUND && file.status != SWFUpload.FILE_STATUS.COMPLETE) {
+							jQuery('#' + file.id).find('.data').html(' - ' + errorString);
+						}
+						if (swfuploadify.settings.onUploadError) swfuploadify.settings.onUploadError(file, errorCode, errorMsg, errorString, swfuploadify.queue);
+					}
 
-	                // Triggered periodically during a file upload
-	                function onUploadProgress(file, fileBytesLoaded, fileTotalBytes) {
-	                    var timer = new Date();
-	                    var newTime = timer.getTime();
-	                    var lapsedTime = newTime - swfuploadify.timer;
-	                    swfuploadify.timer = newTime;
-	                    var lapsedBytes = fileBytesLoaded - swfuploadify.bytesLoaded;
-	                    swfuploadify.bytesLoaded = fileBytesLoaded;
-	                    var queueBytesLoaded = swfuploadify.queue.queueBytesUploaded + fileBytesLoaded;
-	                    var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100);
+					// Triggered periodically during a file upload
+					function onUploadProgress(file, fileBytesLoaded, fileTotalBytes) {
+						var timer = new Date();
+						var newTime = timer.getTime();
+						var lapsedTime = newTime - swfuploadify.timer;
+						swfuploadify.timer = newTime;
+						var lapsedBytes = fileBytesLoaded - swfuploadify.bytesLoaded;
+						swfuploadify.bytesLoaded = fileBytesLoaded;
+						var queueBytesLoaded = swfuploadify.queue.queueBytesUploaded + fileBytesLoaded;
+						var percentage = Math.round(fileBytesLoaded / fileTotalBytes * 100);
 
-	                    // Calculate the average speed
-	                    var mbs = 0;
-	                    var kbs = (lapsedBytes / 1024) / (lapsedTime / 1000);
-	                    kbs = Math.floor(kbs * 10) / 10;
-	                    if (swfuploadify.queue.averageSpeed > 0) {
-	                        swfuploadify.queue.averageSpeed = (swfuploadify.queue.averageSpeed + kbs) / 2;
-	                    } else {
-	                        swfuploadify.queue.averageSpeed = kbs;
-	                    }
-	                    if (kbs > 1000) {
-	                        mbs = (kbs * .001);
-	                        swfuploadify.queue.averageSpeed = mbs;
-	                    }
-	                    var suffix = 'KB/s';
-	                    if (mbs > 0) {
-	                        suffix = 'MB/s';
-	                    }
+						// Calculate the average speed
+						var mbs = 0;
+						var kbs = (lapsedBytes / 1024) / (lapsedTime / 1000);
+						kbs = Math.floor(kbs * 10) / 10;
+						if (swfuploadify.queue.averageSpeed > 0) {
+							swfuploadify.queue.averageSpeed = (swfuploadify.queue.averageSpeed + kbs) / 2;
+						} else {
+							swfuploadify.queue.averageSpeed = kbs;
+						}
+						if (kbs > 1000) {
+							mbs = (kbs * .001);
+							swfuploadify.queue.averageSpeed = mbs;
+						}
+						var suffix = 'KB/s';
+						if (mbs > 0) {
+							suffix = 'MB/s';
+						}
 
-	                    if (jQuery.inArray('onUploadProgress', swfuploadify.settings.skipDefault) < 0) {
-	                        //显示loading图片
-	                        jQuery('#' + file.id).find(".uploadifyImageShow").html("<img src='http://yimg.twhouses.com.tw/hdms/loading_min.gif' alt='Loading' class='uploadifyLoading' />");
-	                        if (swfuploadify.settings.progressData == 'percentage') {
-	                            jQuery('#' + file.id).find('.data').html(' - ' + percentage + '%');
-	                        } else if (swfuploadify.settings.progressData == 'speed') {
-	                            jQuery('#' + file.id).find('.data').html(' - ' + percentage + suffix);
-	                        }
-	                        jQuery('#' + file.id).find('.uploadifyProgressBar').css('width', percentage + '%');
-	                    }
-	                    if (swfuploadify.settings.onUploadProgress) swfuploadify.settings.onUploadProgress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, swfuploadify.queue.uploadSize);
-	                }
+						if (jQuery.inArray('onUploadProgress', swfuploadify.settings.skipDefault) < 0) {
+							//显示loading图片
+							jQuery('#' + file.id).find(".uploadifyImageShow").html("<img src='http://yimg.twhouses.com.tw/hdms/loading_min.gif' alt='Loading' class='uploadifyLoading' />");
+							if (swfuploadify.settings.progressData == 'percentage') {
+								jQuery('#' + file.id).find('.data').html(' - ' + percentage + '%');
+							} else if (swfuploadify.settings.progressData == 'speed') {
+								jQuery('#' + file.id).find('.data').html(' - ' + percentage + suffix);
+							}
+							jQuery('#' + file.id).find('.uploadifyProgressBar').css('width', percentage + '%');
+						}
+						if (swfuploadify.settings.onUploadProgress) swfuploadify.settings.onUploadProgress(file, fileBytesLoaded, fileTotalBytes, queueBytesLoaded, swfuploadify.queue.uploadSize);
+					}
 
-	                // Triggered right before a file is uploaded
-	                function onUploadStart(file) {
-	                    var timer = new Date();
-	                    swfuploadify.timer = timer.getTime();
-	                    swfuploadify.bytesLoaded = 0;
-	                    if (swfuploadify.queue.uploadQueue.length == 0) {
-	                        swfuploadify.queue.uploadSize = file.size;
-	                    }
-	                    if (swfuploadify.settings.checkExisting !== false) {
-	                        jQuery.ajax({
-	                            type: 'POST',
-	                            async: false,
-	                            url: swfuploadify.settings.checkExisting,
-	                            data: { filename: file.name },
-	                            success: function (data) {
-	                                if (data == 1) {
-	                                    var overwrite = confirm('A file with the name "' + file.name + '" already exists on the server.\nWould you like to replace the existing file?');
-	                                    if (!overwrite) {
-	                                        swfuploadify.cancelUpload(file.id);
-	                                        jQuery('#' + file.id).remove();
-	                                        if (swfuploadify.queue.uploadQueue.length > 0 && swfuploadify.queue.queueLength > 0) {
-	                                            if (swfuploadify.queue.uploadQueue[0] == '*') {
-	                                                swfuploadify.startUpload();
-	                                            } else {
-	                                                swfuploadify.startUpload(swfuploadify.queue.uploadQueue.shift());
-	                                            }
-	                                        }
-	                                    }
-	                                }
-	                            }
-	                        });
-	                    }
-	                    if (swfuploadify.settings.onUploadStart) swfuploadify.settings.onUploadStart(file);
-	                }
+					// Triggered right before a file is uploaded
+					function onUploadStart(file) {
+						var timer = new Date();
+						swfuploadify.timer = timer.getTime();
+						swfuploadify.bytesLoaded = 0;
+						if (swfuploadify.queue.uploadQueue.length == 0) {
+							swfuploadify.queue.uploadSize = file.size;
+						}
+						if (swfuploadify.settings.checkExisting !== false) {
+							jQuery.ajax({
+								type: 'POST',
+								async: false,
+								url: swfuploadify.settings.checkExisting,
+								data: { filename: file.name },
+								success: function (data) {
+									if (data == 1) {
+										var overwrite = confirm('A file with the name "' + file.name + '" already exists on the server.\nWould you like to replace the existing file?');
+										if (!overwrite) {
+											swfuploadify.cancelUpload(file.id);
+											jQuery('#' + file.id).remove();
+											if (swfuploadify.queue.uploadQueue.length > 0 && swfuploadify.queue.queueLength > 0) {
+												if (swfuploadify.queue.uploadQueue[0] == '*') {
+													swfuploadify.startUpload();
+												} else {
+													swfuploadify.startUpload(swfuploadify.queue.uploadQueue.shift());
+												}
+											}
+										}
+									}
+								}
+							});
+						}
+						if (swfuploadify.settings.onUploadStart) swfuploadify.settings.onUploadStart(file);
+					}
 
-	                // Triggered when a file upload returns a successful code
-	                function onUploadSuccess(file, data, response) {
-	                    swfuploadify.queue.queueBytesUploaded += file.size;
-	                    jQuery('#' + file.id).find('.data').html(' - Complete');
-	                    if (swfuploadify.settings.onUploadSuccess) swfuploadify.settings.onUploadSuccess(file, data, response);
-	                }
+					// Triggered when a file upload returns a successful code
+					function onUploadSuccess(file, data, response) {
+						swfuploadify.queue.queueBytesUploaded += file.size;
+						jQuery('#' + file.id).find('.data').html(' - Complete');
+						if (swfuploadify.settings.onUploadSuccess) swfuploadify.settings.onUploadSuccess(file, data, response);
+					}
 
-	                // ---------------------------
-	                // End Event Handler Functions
-	                // ---------------------------
-	            });
-	        },
+					// ---------------------------
+					// End Event Handler Functions
+					// ---------------------------
+				});
+			},
 
-	        // Cancel a file upload and remove it from the queue
-	        uploadifyCancel: function (fileID) {
-	            //如果照片上传已经完成并已返回该图片,则发送删除命令给服务器
-	            var tsrc = jQuery("#" + fileID).find(".ImageShow").attr("src");
-	            if (tsrc && tsrc.indexOf("http://") > -1) {
-	                //删除在服务器上的文件
-	                alert("del");
-	            }
+			// Cancel a file upload and remove it from the queue
+			uploadifyCancel: function (fileID) {
+				//如果照片上传已经完成并已返回该图片,则发送删除命令给服务器
+				var tsrc = jQuery("#" + fileID).find(".ImageShow").attr("src");
+				if (tsrc && tsrc.indexOf("http://") > -1) {
+					//删除在服务器上的文件
+					var hiimg = $("#img").val().replace("," + $("#" + fileID + " .uploadifyImageShow img").attr("src"), '');
+					$("#img").val(hiimg);
+				}
 
-	            var id = jQuery(this).selector.replace('#', '');
-	            var swfuploadify = window['uploadify_' + id];
-	            var delay = -1;
-	            if (arguments[0]) {
-	                if (arguments[0] == '*') {
-	                    jQuery('#' + swfuploadify.settings.queueID).find('.uploadifyQueueItem').each(function () {
-	                        delay++;
-	                        swfuploadify.cancelUpload(jQuery(this).attr('id'));
-	                        jQuery(this).delay(100 * delay).fadeOut(500, function () {
-	                            jQuery(this).remove();
-	                        });
-	                    });
-	                    swfuploadify.queue.queueSize = 0;
-	                } else {
-	                    for (var n = 0; n < arguments.length; n++) {
-	                        swfuploadify.cancelUpload(arguments[n]);
-	                        jQuery('#' + arguments[n]).delay(100 * n).fadeOut(500, function () {
-	                            jQuery(this).remove();
-	                        });
-	                    }
-	                }
-	            } else {
-	                jQuery('#' + swfuploadify.settings.queueID).find('.uploadifyQueueItem').get(0).fadeOut(500, function () {
-	                    jQuery(this).remove();
-	                    swfuploadify.cancelUpload(jQuery(this).attr('id'));
-	                });
-	            }
-	        },
+				var id = jQuery(this).selector.replace('#', '');
+				var swfuploadify = window['uploadify_' + id];
+				var delay = -1;
+				if (arguments[0]) {
+					if (arguments[0] == '*') {
+						jQuery('#' + swfuploadify.settings.queueID).find('.uploadifyQueueItem').each(function () {
+							delay++;
+							swfuploadify.cancelUpload(jQuery(this).attr('id'));
+							jQuery(this).delay(100 * delay).fadeOut(500, function () {
+								jQuery(this).remove();
+							});
+						});
+						swfuploadify.queue.queueSize = 0;
+					} else {
+						for (var n = 0; n < arguments.length; n++) {
+							swfuploadify.cancelUpload(arguments[n]);
+							jQuery('#' + arguments[n]).delay(100 * n).fadeOut(500, function () {
+								jQuery(this).remove();
+							});
+						}
+					}
+				} else {
+					jQuery('#' + swfuploadify.settings.queueID).find('.uploadifyQueueItem').get(0).fadeOut(500, function () {
+						jQuery(this).remove();
+						swfuploadify.cancelUpload(jQuery(this).attr('id'));
+					});
+				}
+			},
 
-	        // Get rid of the instance of Uploadify
-	        uploadifyDestroy: function () {
-	            var id = jQuery(this).selector.replace('#', '');
-	            var swfuploadify = window['uploadify_' + id];
-	            swfuploadify.destroy();
-	            jQuery('#' + id + '_queue').remove();
-	            jQuery('#' + id).replaceWith(swfuploadify.original);
-	            delete window['uploadify_' + id];
-	        },
+			// Get rid of the instance of Uploadify
+			uploadifyDestroy: function () {
+				var id = jQuery(this).selector.replace('#', '');
+				var swfuploadify = window['uploadify_' + id];
+				swfuploadify.destroy();
+				jQuery('#' + id + '_queue').remove();
+				jQuery('#' + id).replaceWith(swfuploadify.original);
+				delete window['uploadify_' + id];
+			},
 
-	        // Disable the select button
-	        uploadifyDisable: function (isDisabled) {
-	            var id = jQuery(this).selector.replace('#', '');
-	            var swfuploadify = window['uploadify_' + id];
-	            swfuploadify.setButtonDisabled(isDisabled);
-	        },
+			// Disable the select button
+			uploadifyDisable: function (isDisabled) {
+				var id = jQuery(this).selector.replace('#', '');
+				var swfuploadify = window['uploadify_' + id];
+				swfuploadify.setButtonDisabled(isDisabled);
+			},
 
-	        // Update or retrieve a setting
-	        uploadifySettings: function (name, value, resetObjects) {
-	            var id = jQuery(this).selector.replace('#', '');
-	            var swfuploadify = window['uploadify_' + id];
-	            if (typeof (arguments[0]) == 'object') {
-	                for (var n in value) {
-	                    setData(n, value[n]);
-	                }
-	            }
-	            if (arguments.length == 1) {
-	                return swfuploadify.settings[name];
-	            } else {
-	                setData(name, value, resetObjects);
-	            }
+			// Update or retrieve a setting
+			uploadifySettings: function (name, value, resetObjects) {
+				var id = jQuery(this).selector.replace('#', '');
+				var swfuploadify = window['uploadify_' + id];
+				if (typeof (arguments[0]) == 'object') {
+					for (var n in value) {
+						setData(n, value[n]);
+					}
+				}
+				if (arguments.length == 1) {
+					return swfuploadify.settings[name];
+				} else {
+					setData(name, value, resetObjects);
+				}
 
-	            function setData(settingName, settingValue, resetObjects) {
-	                switch (settingName) {
-	                    case 'uploader':
-	                        swfuploadify.setUploadURL(settingValue);
-	                        break;
-	                    case 'postData':
-	                        if (!resetObjects) {
-	                            value = jQuery.extend(swfuploadify.settings.postData, settingValue);
-	                        }
-	                        swfuploadify.setPostParams(settingValue);
-	                        break;
-	                    case 'method':
-	                        if (settingValue == 'get') {
-	                            swfuploadify.setUseQueryString(true);
-	                        } else {
-	                            swfuploadify.setUseQueryString(false);
-	                        }
-	                        break;
-	                    case 'fileObjName':
-	                        swfuploadify.setFilePostName(settingValue);
-	                        break;
-	                    case 'fileTypeExts':
-	                        swfuploadify.setFileTypes(settingValue, swfuploadify.settings.fileTypeDesc);
-	                        break;
-	                    case 'fileTypeDesc':
-	                        swfuploadify.setFileTypes(swfuploadify.settings.fileTypeExts, settingValue);
-	                        break;
-	                    case 'fileSizeLimit':
-	                        swfuploadify.setFileSizeLimit(settingValue);
-	                        break;
-	                    case 'uploadLimit':
-	                        swfuploadify.setFileUploadLimit(settingValue);
-	                        break;
-	                    case 'queueSizeLimit':
-	                        swfuploadify.setFileQueueLimit(settingValue);
-	                        break;
-	                    case 'buttonImage':
-	                        jQuery('#' + swfuploadify.settings.id + '_button').remove();
-	                        swfuploadify.setButtonImageURL(settingValue);
-	                        break;
-	                    case 'buttonCursor':
-	                        if (settingValue == 'arrow') {
-	                            swfuploadify.setButtonCursor(SWFUpload.CURSOR.ARROW);
-	                        } else {
-	                            swfuploadify.setButtonCursor(SWFUpload.CURSOR.HAND);
-	                        }
-	                        break;
-	                    case 'buttonText':
-	                        jQuery('#' + swfuploadify.settings.id + '_button').find('.uploadifyButtonText').html(settingValue);
-	                        break;
-	                    case 'width':
-	                        swfuploadify.setButtonDimensions(settingValue, swfuploadify.settings.height);
-	                        break;
-	                    case 'height':
-	                        swfuploadify.setButtonDimensions(swfuploadify.settings.width, settingValue);
-	                        break;
-	                    case 'multi':
-	                        if (settingValue) {
-	                            swfuploadify.setButtonAction(SWFUpload.BUTTON_ACTION.SELECT_FILES);
-	                        } else {
-	                            swfuploadify.setButtonAction(SWFUpload.BUTTON_ACTION.SELECT_FILE);
-	                        }
-	                        break;
-	                }
-	                swfuploadify.settings[settingName] = value;
-	            }
-	        },
+				function setData(settingName, settingValue, resetObjects) {
+					switch (settingName) {
+						case 'uploader':
+							swfuploadify.setUploadURL(settingValue);
+							break;
+						case 'postData':
+							if (!resetObjects) {
+								value = jQuery.extend(swfuploadify.settings.postData, settingValue);
+							}
+							swfuploadify.setPostParams(settingValue);
+							break;
+						case 'method':
+							if (settingValue == 'get') {
+								swfuploadify.setUseQueryString(true);
+							} else {
+								swfuploadify.setUseQueryString(false);
+							}
+							break;
+						case 'fileObjName':
+							swfuploadify.setFilePostName(settingValue);
+							break;
+						case 'fileTypeExts':
+							swfuploadify.setFileTypes(settingValue, swfuploadify.settings.fileTypeDesc);
+							break;
+						case 'fileTypeDesc':
+							swfuploadify.setFileTypes(swfuploadify.settings.fileTypeExts, settingValue);
+							break;
+						case 'fileSizeLimit':
+							swfuploadify.setFileSizeLimit(settingValue);
+							break;
+						case 'uploadLimit':
+							swfuploadify.setFileUploadLimit(settingValue);
+							break;
+						case 'queueSizeLimit':
+							swfuploadify.setFileQueueLimit(settingValue);
+							break;
+						case 'buttonImage':
+							jQuery('#' + swfuploadify.settings.id + '_button').remove();
+							swfuploadify.setButtonImageURL(settingValue);
+							break;
+						case 'buttonCursor':
+							if (settingValue == 'arrow') {
+								swfuploadify.setButtonCursor(SWFUpload.CURSOR.ARROW);
+							} else {
+								swfuploadify.setButtonCursor(SWFUpload.CURSOR.HAND);
+							}
+							break;
+						case 'buttonText':
+							jQuery('#' + swfuploadify.settings.id + '_button').find('.uploadifyButtonText').html(settingValue);
+							break;
+						case 'width':
+							swfuploadify.setButtonDimensions(settingValue, swfuploadify.settings.height);
+							break;
+						case 'height':
+							swfuploadify.setButtonDimensions(swfuploadify.settings.width, settingValue);
+							break;
+						case 'multi':
+							if (settingValue) {
+								swfuploadify.setButtonAction(SWFUpload.BUTTON_ACTION.SELECT_FILES);
+							} else {
+								swfuploadify.setButtonAction(SWFUpload.BUTTON_ACTION.SELECT_FILE);
+							}
+							break;
+					}
+					swfuploadify.settings[settingName] = value;
+				}
+			},
 
-	        // Stop the current upload and requeue what is in progress
-	        uploadifyStop: function () {
-	            var id = jQuery(this).selector.replace('#', '');
-	            var swfuploadify = window['uploadify_' + id];
-	            swfuploadify.stopUpload();
-	        },
+			// Stop the current upload and requeue what is in progress
+			uploadifyStop: function () {
+				var id = jQuery(this).selector.replace('#', '');
+				var swfuploadify = window['uploadify_' + id];
+				swfuploadify.stopUpload();
+			},
 
-	        // Upload the first file, a select number of files, or all the files in the queue
-	        uploadifyUpload: function () {
-	            var id = jQuery(this).selector.replace('#', '');
-	            var swfuploadify = window['uploadify_' + id];
+			// Upload the first file, a select number of files, or all the files in the queue
+			uploadifyUpload: function () {
+				var id = jQuery(this).selector.replace('#', '');
+				var swfuploadify = window['uploadify_' + id];
 
-	            // Reset the queue information
-	            swfuploadify.queue.averageSpeed = 0;
-	            swfuploadify.queue.uploadSize = 0;
-	            swfuploadify.queue.bytesUploaded = 0;
-	            swfuploadify.queue.uploadQueue = [];
+				// Reset the queue information
+				swfuploadify.queue.averageSpeed = 0;
+				swfuploadify.queue.uploadSize = 0;
+				swfuploadify.queue.bytesUploaded = 0;
+				swfuploadify.queue.uploadQueue = [];
 
-	            if (arguments[0]) {
-	                if (arguments[0] == '*') {
-	                    swfuploadify.queue.uploadSize = swfuploadify.queue.queueSize;
-	                    swfuploadify.queue.uploadQueue.push('*');
-	                    swfuploadify.startUpload();
-	                } else {
-	                    for (var n = 0; n < arguments.length; n++) {
-	                        swfuploadify.queue.uploadSize += swfuploadify.queue.files[arguments[n]].size;
-	                        swfuploadify.queue.uploadQueue.push(arguments[n]);
-	                    }
-	                    swfuploadify.startUpload(swfuploadify.queue.uploadQueue.shift());
-	                }
-	            } else {
-	                swfuploadify.startUpload();
-	            }
-	        }
-	    })
+				if (arguments[0]) {
+					if (arguments[0] == '*') {
+						swfuploadify.queue.uploadSize = swfuploadify.queue.queueSize;
+						swfuploadify.queue.uploadQueue.push('*');
+						swfuploadify.startUpload();
+					} else {
+						for (var n = 0; n < arguments.length; n++) {
+							swfuploadify.queue.uploadSize += swfuploadify.queue.files[arguments[n]].size;
+							swfuploadify.queue.uploadQueue.push(arguments[n]);
+						}
+						swfuploadify.startUpload(swfuploadify.queue.uploadQueue.shift());
+					}
+				} else {
+					swfuploadify.startUpload();
+				}
+			}
+		})
 	}
 )(jQuery);

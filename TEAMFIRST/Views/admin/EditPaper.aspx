@@ -110,7 +110,6 @@
         .uploadifyQueueItem .cancel
         {
             float: right;
-            display: none;
             cursor: pointer;
         }
         .uploadifyQueue .completed
@@ -128,6 +127,11 @@
             background-color: #0099FF;
             height: 3px;
             width: 1px;
+        }
+        .cleanimg
+        {
+            width: 100px;float: left;
+            margin-top: 20px;            
         }
     </style>
     <script src="/Assets/js/jquery-1.4.1.js" type="text/javascript"></script>
@@ -164,41 +168,41 @@
                     <textarea id="elm1" name="elm1" style="width: 860px; height: 350px; background: url(img/demobg.jpg) no-repeat right bottom fixed"><%=newsContent %></textarea>
                     <br />
                     <span style="color: #ccc;"></span>
+                    <input type="hidden" id="img" name="img" value="<%=newshidden %>" />
                     <div class="uploadimg">
                         <table id="info_block" cellpadding="0" cellspacing="0" style="width: 750px;">
                             <tr id="trupload" style="">
                                 <td class="tr_content">
                                     <div id="divload">
-                                        <div id="status-message">
+                                        <div id="status-message" style="display: none;">
                                         </div>
                                         <div id="fileQueue">
+                                            <%=newsImg %>
                                         </div>
                                         <div style="clear: both;">
                                         </div>
-                                        <div style="width: 140px; margin-top: 20px;">
+                                        <div style="width: 140px; margin-top: 20px; float: left;">
                                             <input type="file" name="uploadify" id="uploadify" /></div>
+                                        <div class="cleanimg">
+                                            <div class="uploadify" style="cursor: pointer;" onclick="cleanimg()">
+                                                <div class="uploadifyButton">
+                                                    <span class="uploadifyButtonText">清除圖片</span></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center; height: 30px; padding: 5px;">
-                                    <input type="button" value="上 傳" onclick="tt()" />
-                                    <input type="button" value="返回列表" onclick="returnurl()" />
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div style="clear: both">
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="border_lbr" style="text-align: center; height: 30px;">
-                    <input type="submit" value="提交" style="height: 28px; width: 122px;" />
-                </td>
-            </tr>
-        </table>
-    </div>
+                </td> </tr>
+    <tr>
+        <td colspan="2" class="border_lbr" style="text-align: center; height: 30px;">
+            <input type="submit" value="提交" style="height: 28px; width: 122px;" />
+        </td>
+    </tr>
+    </table> </div>
     </form>
 </body>
 <script type="text/javascript">
@@ -233,6 +237,12 @@
         });
     }
     function submitForm() { $('#form2').submit(); }
+
+    function cleanimg() {
+        $("#img").val("");
+        $("#fileQueue").empty();
+        $("#status-message").empty();
+    }
 
     $(function () {
 
@@ -303,6 +313,7 @@
                     var thisfileobj = jQuery('#' + file.id);
                     thisfileobj.find(".uploadifyImageShow").html("<img src='" + data + "' alt='' class='ImageShow' />");
                     thisfileobj.find(".data,.uploadifyProgress").remove();
+                    $("#img").val($("#img").val() + ',' + data);
                 }
                 else
                     alert(data);

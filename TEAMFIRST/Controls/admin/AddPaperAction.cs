@@ -12,8 +12,8 @@ namespace TEAMFIRST.Controls.admin
             bool istrue = false;
             if (VerifyRequest(context.Request))
             {
-                string sql = "insert into newspaper (newstitle,newscontent,state,addtime) values"
-                    + " ('" + common.requestForm("NewsTitle") + "','" + common.requestForm("elm1") + "',1,datetime(CURRENT_TIMESTAMP,'localtime'))";
+                string sql = "insert into newspaper (newstitle,newscontent,newsimg,state,addtime) values"
+                    + " ('" + common.requestForm("NewsTitle") + "','" + common.requestForm("elm1") + "','" + common.requestForm("img") + "' ,1,datetime(CURRENT_TIMESTAMP,'localtime'))";
                 SQLiteHelper.ExecuteSql(sql);
 
                 istrue = true;
@@ -40,7 +40,7 @@ namespace TEAMFIRST.Controls.admin
         {
             bool istrue = false;
             string sql = "update newspaper set newstitle='" + common.requestForm("NewsTitle") + "',newscontent='"
-                + common.requestForm("elm1") + "' where newsid=" + common.requestForm("newsid");
+                + common.requestForm("elm1") + "',newsimg = '" + common.requestForm("img") + "' where newsid=" + common.requestForm("newsid");
             int count = SQLiteHelper.ExecuteSql(sql);
 
             if (count > 0)
