@@ -35,7 +35,7 @@
 			border-right:1px solid #2981be;
 		}
 		
-				.uploadifyButton
+		.uploadifyButton
 		{
 			background-color: #505050;
 			-webkit-border-radius: 3px;
@@ -56,8 +56,8 @@
 			background-color: White;
 			font: 11px Verdana, Geneva, sans-serif;
 			margin-top: 5px;
-			width: 150px;
-			max-width: 150px;
+			width: 160px;
+			max-width: 160px;
 			padding: 6px;
 			border: 1px solid #E0E0E0;
 			/* border: 1px solid #DBDBDB; */
@@ -72,8 +72,8 @@
 		}
 		.uploadifyImageShow
 		{
-			margin: 10px auto;
-			width: 120px;
+			margin-top: 10px;
+			width: 152px;
 			height: 120px;
 			line-height: 120px;
 			vertical-align:middle; /* 兼容ie */
@@ -160,7 +160,7 @@
 										</div>
 										<div style="clear: both;">
 										</div>
-										<div style="width: 140px; margin-top: 20px; float: left;">
+										<div style="width: 160px; margin-top: 20px; float: left;">
 											<input type="file" name="uploadify" id="uploadify" /></div>
 										<div class="cleanimg">
 											<div class="uploadify" style="cursor: pointer;" onclick="cleanimg()">
@@ -245,7 +245,8 @@
 					success: function (msg) {
 						if (msg == "1") {
 							alert("提交成功");
-							window.location.href = window.location.href;
+							//window.location.href = window.location.href;
+							window.location.href = "/Views/admin/PaperList.aspx";
 						}
 						else
 							alert("提交失敗");
@@ -292,14 +293,14 @@
 				$('#status-message').text(queue.filesQueued + ' files have been added to the queue.');
 			},
 			'onUploadSuccess': function (file, data, response) {
-				if (data.indexOf("http://") == 0) {
+				//if (data.indexOf("http://") == 0) {
 					var thisfileobj = jQuery('#' + file.id);
-					thisfileobj.find(".uploadifyImageShow").html("<img src='" + data + "' alt='' class='ImageShow' />");
+					thisfileobj.find(".uploadifyImageShow").html("<img src='" + data + "' width='152' height='102' alt='' class='ImageShow' />");
 					thisfileobj.find(".data,.uploadifyProgress").remove();
 					$("#img").val($("#img").val() + ',' + data);
-				}
-				else
-					alert(data);
+				//}
+				//else
+				//	alert(data);
 			},
 			'onQueueComplete': function (stats) {
 				$('#status-message').text(stats.successful_uploads + ' files uploaded, ' + stats.upload_errors + ' errors.');

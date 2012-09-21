@@ -49,90 +49,90 @@
             border-right: 1px solid #2981be;
         }
         
-        .uploadifyButton
-        {
-            background-color: #505050;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-            color: #FFF;
-            font: 12px Arial, Helvetica, sans-serif;
-            padding: 8px 0;
-            text-align: center;
-            width: 100%;
-        }
-        .uploadify:hover .uploadifyButton
-        {
-            background-color: #808080;
-        }
-        .uploadifyQueueItem
-        {
-            background-color: White;
-            font: 11px Verdana, Geneva, sans-serif;
-            margin-top: 5px;
-            width: 150px;
-            max-width: 150px;
-            padding: 6px;
-            border: 1px solid #E0E0E0;
-            /* border: 1px solid #DBDBDB; */
-            float: left;
-            margin-left: 5px;
-            -o-transition: opacity .4s ease-in-out;
-            -moz-transition: opacity .4s ease-in-out;
-            -webkit-transition: opacity .4s ease-in-out;
-            -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .uploadifyImageShow
-        {
-            margin: 10px auto;
-            width: 120px;
-            height: 120px;
-            line-height: 120px;
-            vertical-align:middle; /* 兼容ie */
-            text-align:center;
-            *display:block; 
-        }
-        .uploadifyImageShow .ImageShow
-        {
-            vertical-align: middle;
-        }
-        .uploadifyLoading
-        {
-            margin: 52px;
-        }
-        .uploadifyError
-        {
-            background-color: #FDE5DD !important;
-            border: 2px solid #FBCBBC !important;
-        }
-        .uploadifyQueueItem .cancel
-        {
-            float: right;
-            cursor: pointer;
-        }
-        .uploadifyQueue .completed
-        {
-            background-color: #E5E5E5;
-        }
-        .uploadifyProgress
-        {
-            background-color: #E5E5E5;
-            margin-top: 10px;
-            width: 100%;
-        }
-        .uploadifyProgressBar
-        {
-            background-color: #0099FF;
-            height: 3px;
-            width: 1px;
-        }
-        .cleanimg
-        {
-            width: 100px;float: left;
-            margin-top: 20px;            
-        }
+		.uploadifyButton
+		{
+			background-color: #505050;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			color: #FFF;
+			font: 12px Arial, Helvetica, sans-serif;
+			padding: 8px 0;
+			text-align: center;
+			width: 100%;
+		}
+		.uploadify:hover .uploadifyButton
+		{
+			background-color: #808080;
+		}
+		.uploadifyQueueItem
+		{
+			background-color: White;
+			font: 11px Verdana, Geneva, sans-serif;
+			margin-top: 5px;
+			width: 160px;
+			max-width: 160px;
+			padding: 6px;
+			border: 1px solid #E0E0E0;
+			/* border: 1px solid #DBDBDB; */
+			float: left;
+			margin-left: 5px;
+			-o-transition: opacity .4s ease-in-out;
+			-moz-transition: opacity .4s ease-in-out;
+			-webkit-transition: opacity .4s ease-in-out;
+			-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+			-moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		}
+		.uploadifyImageShow
+		{
+			margin-top: 10px;
+			width: 152px;
+			height: 120px;
+			line-height: 120px;
+			vertical-align:middle; /* 兼容ie */
+			text-align:center;
+			*display:block; 
+		}
+		.uploadifyImageShow .ImageShow
+		{
+			vertical-align: middle;
+		}
+		.uploadifyLoading
+		{
+			margin: 52px;
+		}
+		.uploadifyError
+		{
+			background-color: #FDE5DD !important;
+			border: 2px solid #FBCBBC !important;
+		}
+		.uploadifyQueueItem .cancel
+		{
+			float: right;
+			cursor: pointer;
+		}
+		.uploadifyQueue .completed
+		{
+			background-color: #E5E5E5;
+		}
+		.uploadifyProgress
+		{
+			background-color: #E5E5E5;
+			margin-top: 10px;
+			width: 100%;
+		}
+		.uploadifyProgressBar
+		{
+			background-color: #0099FF;
+			height: 3px;
+			width: 1px;
+		}
+		.cleanimg
+		{
+			width: 100px;float: left;
+			margin-top: 20px;            
+		}
     </style>
     <script src="/Assets/js/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="/Assets/xheditor/xheditor.js" type="text/javascript"></script>
@@ -149,7 +149,7 @@
             width="97%">
             <tr>
                 <td colspan="2" height="30" align="right">
-                    <a href="#" onclick="javascript:history.back(-1);">返 回</a>
+                    <a href="/Views/admin/PaperList.aspx">返 回</a>
                 </td>
             </tr>
             <tr style="height: 25px; font-weight: bold;">
@@ -242,6 +242,7 @@
         $("#img").val("");
         $("#fileQueue").empty();
         $("#status-message").empty();
+
     }
 
     $(function () {
@@ -261,7 +262,8 @@
                     success: function (msg) {
                         if (msg == "1") {
                             alert("修改成功");
-                            window.location.href = window.location.href;
+                            //window.location.href = window.location.href;
+                            window.location.href = "/Views/admin/PaperList.aspx";
                         }
                         else
                             alert("修改失敗");
@@ -309,14 +311,14 @@
                 $('#status-message').text(queue.filesQueued + ' files have been added to the queue.');
             },
             'onUploadSuccess': function (file, data, response) {
-                if (data.indexOf("http://") == 0) {
+                //if (data.indexOf("http://") == 0) {
                     var thisfileobj = jQuery('#' + file.id);
-                    thisfileobj.find(".uploadifyImageShow").html("<img src='" + data + "' alt='' class='ImageShow' />");
+                    thisfileobj.find(".uploadifyImageShow").html("<img src='" + data + "' alt='' width='152' height='102' class='ImageShow' />");
                     thisfileobj.find(".data,.uploadifyProgress").remove();
                     $("#img").val($("#img").val() + ',' + data);
-                }
-                else
-                    alert(data);
+                //}
+                //else
+                //    alert(data);
             },
             'onQueueComplete': function (stats) {
                 $('#status-message').text(stats.successful_uploads + ' files uploaded, ' + stats.upload_errors + ' errors.');

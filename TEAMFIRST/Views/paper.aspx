@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="news_wrapper">
         <div id="list_content">
-            <div id="pre_page"><img width="15" height="59" src="/Assets/Images/pre_page.png" alt="" /></div>
+            <div id="pre_page"><%=pPage %></div>
             <div id="news_list">
                     <!--<div class="row"><div class="n_date">2012.08.14</div><div class="n_split"></div><div class="n_title"><a href="/Views/paper_detail.aspx?naviPage=navi5">鳳梨酥揚威江陳會  人手一盒</a></div></div>-->
                     <%=content %>
@@ -17,7 +17,7 @@
                     -->
                     <div id="n_foot"></div>
             </div>
-            <div id="next_page"><img width="15" height="59" src="/Assets/Images/next_page.png" alt="" /></div>
+            <div id="next_page"><%=nPage %></div>
         </div>
     </div>
 </asp:Content>

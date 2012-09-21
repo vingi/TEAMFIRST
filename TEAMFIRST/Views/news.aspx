@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="news_wrapper">
+        <!--
         <div id="news_content">
             <div id="n_img">
                 <div id="n_img01"></div>
@@ -16,11 +17,12 @@
                 <div id="n_icon2"><a href="#" onclick="javascript:showNews(1);"></a></div>
             </div>
         </div>
+        -->
         <div id="n_content">
-            <div id="b_blank"></div>
+            <div id="b_blank"><%=content %></div>
             <div id="b_icon">
-                <div id="n_icon3"><a href="#" onclick="javascript:showNews(2);"></a></div>
-                <div id="n_icon4"><a href="#" onclick="javascript:showNews(1);"></a></div>
+                <div id="n_icon3"><%=leftUrl %></div>
+                <div id="n_icon4"><%=rightUrl %></div>
             </div>
         </div>
     </div>

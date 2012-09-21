@@ -50,16 +50,16 @@
                         <td class="border_trb"><%=userName %></td>
                     </tr>
                     <tr style="height:25px;font-weight:bold;">
-                        <td class="border_all" width="100">舊密碼</td>
-                        <td class="border_trb"><input type="password" id="OldPwd" name="OldPwd" size="20" /></td>
+                        <td class="border_lbr" width="100">舊密碼</td>
+                        <td class="border_br"><input type="password" id="OldPwd" name="OldPwd" size="20" /></td>
                     </tr>
                     <tr style="height:25px;font-weight:bold;">
-                        <td class="border_all" width="100">新密碼</td>
-                        <td class="border_trb"><input type="password" id="UserPwd" name="UserPwd" size="20" /></td>
+                        <td class="border_lbr" width="100">新密碼</td>
+                        <td class="border_br"><input type="password" id="UserPwd" name="UserPwd" size="20" /></td>
                     </tr>
                     <tr style="height:25px;font-weight:bold;">
-                        <td class="border_all" width="100">確認密碼</td>
-                        <td class="border_trb"><input type="password" id="AgainPwd" name="AgainPwd" size="20" /></td>
+                        <td class="border_lbr" width="100">確認密碼</td>
+                        <td class="border_br"><input type="password" id="AgainPwd" name="AgainPwd" size="20" /></td>
                     </tr>
                     <tr>
                         <td colspan="2" class="border_lbr" style="text-align:center;height:30px;" ><input type="submit" value="提交" style="height:28px;width:122px;" /></td>

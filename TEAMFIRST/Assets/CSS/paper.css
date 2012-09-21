@@ -17,7 +17,9 @@
     height:59px;
     margin-top:124px;
     margin-left:41px;
+    /*
     background-image:url(/Assets/Images/pre_page.png);
+    */
 }
 #news_list
 {
@@ -74,5 +76,7 @@
     height:59px;
     margin-top:124px;
     margin-right:41px;
+    /*
     background-image:url(/Assets/Images/next_page.png);
+    */
 }

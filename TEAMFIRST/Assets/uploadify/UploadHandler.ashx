@@ -20,7 +20,7 @@ public class UploadHandler : IHttpHandler {
             }
             Random ro = new Random();
             string stro = ro.Next(100, 100000000).ToString();//产生一个随机数用于新命名的图片
-            string NewName = DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + DateTime.Now.Millisecond.ToString() + stro;
+            string NewName = DateTime.Now.ToString("yyyyMMdd")+DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + DateTime.Now.Millisecond.ToString() + stro;
             if (oFile.FileName.Length > 0)
             {
                 string FileExtention = Path.GetExtension(oFile.FileName);
@@ -30,10 +30,18 @@ public class UploadHandler : IHttpHandler {
                 try
                 {
                     //string re = Upload_Request("http://vingi.soufun.tw/ReceiveImage.ashx?filename=" + NewName + "_1" + FileExtention, fileallname, NewName + FileExtention, context);
-                    string re = uploadtt(fileallname);
-                    context.Response.Write(re);
-                    FileInfo file = new FileInfo(fileallname);
-                    file.Delete();
+                    //string re = uploadtt(fileallname);
+                    string re = "/ImageUpload/" + NewName + FileExtention;
+                    if (string.IsNullOrEmpty(TEAMFIRST.common.requestQueryString("immediate")))
+                    {
+                        context.Response.Write(re);
+                    }
+                    else
+                    {
+                        context.Response.Write("{\"err\":\"\",\"msg\":\""+re+"\"}"﻿﻿);
+                    }
+                    //FileInfo file = new FileInfo(fileallname);
+                    //file.Delete();
                     context.Response.End();
                 }
                 catch (Exception ex) { }
@@ -51,6 +59,7 @@ public class UploadHandler : IHttpHandler {
     {
         string geturl = string.Empty;
         string Para = "http://uimg.twhouses.com.tw/uploads/,120,E:\\uploads ";
+        //string Para = "http://uimg.twhouses.com.tw/uploads/,120,E:\\uploads ";
         try
         {
             System.Net.WebClient Client = new System.Net.WebClient();

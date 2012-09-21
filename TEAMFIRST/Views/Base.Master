@@ -19,14 +19,14 @@
             </asp:ContentPlaceHolder>
         </div>
         <div id="navi">
-            <div id="navi_left"><a href="/Views/news.aspx?naviPage=navi1"><span id="navi1">最新消息</span></a>　　<a href="/Views/aboutus.aspx?naviPage=navi2"><span id="navi2">關於我們</span></a>　　<a href="/Views/products.aspx?naviPage=navi3&item=1"><span id="navi3">產品資訊</span></a>　　<a href="/Views/stores.aspx?naviPage=navi4"><span id="navi4">門市介紹</span></a>　　<a href="/Views/paper.aspx?naviPage=navi5"><span id="navi5">媒體報導</span></a>　　<a href="/Views/contactus.aspx?naviPage=navi6"><span id="navi6">連絡我們</span></a></div>
+            <div id="navi_left"><a href="/Views/news.aspx?naviPage=navi1&msgid=<%=msgid %>"><span id="navi1">最新消息</span></a>　　<a href="/Views/aboutus.aspx?naviPage=navi2"><span id="navi2">關於我們</span></a>　　<a href="/Views/products.aspx?naviPage=navi3&item=1"><span id="navi3">產品資訊</span></a>　　<a href="/Views/stores.aspx?naviPage=navi4"><span id="navi4">門市介紹</span></a>　　<a href="/Views/paper.aspx?naviPage=navi5"><span id="navi5">媒體報導</span></a>　　<a href="/Views/contactus.aspx?naviPage=navi6"><span id="navi6">連絡我們</span></a></div>
             <div id="navi_right"><a href="/Views/index.aspx"><img width="210" height="46" src="/Assets/Images/Base/logo.png" alt="logo" /></a></div>
         </div>
         <div id="foot">
             <div class="clearfix">
                 <div id="flower"></div>
                 <div id="buttons">
-                    <div id="button01"><a href="/Views/news.aspx?naviPage=navi1"></a></div>
+                    <div id="button01"><a href="/Views/news.aspx?naviPage=navi1&msgid=<%=msgid %>"></a></div>
                     <div id="middle_button">
                         <ul>
                             <li><div id="button02"><a href="#"></a></div></li>

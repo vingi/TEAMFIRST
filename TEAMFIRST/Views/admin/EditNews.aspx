@@ -67,7 +67,7 @@
             width="97%">
             <tr>
                 <td colspan="2" height="30" align="right">
-                    <a href="#" onclick="javascript:history.back(-1);">返 回</a>
+                    <a href="/Views/admin/NewsList.aspx">返 回</a>
                 </td>
             </tr>
             <tr style="height: 25px; font-weight: bold;">
@@ -129,7 +129,7 @@
             tools: 'Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,Align,List,Outdent,Indent,Link,Unlink,Img,Table,Source,Fullscreen',
             html5Upload: false,
             upMultiple: '1',
-            upImgUrl: '/Controls/admin/Upload.aspx',
+            upImgUrl: '/Assets/uploadify/UploadHandler.ashx?immediate=0',
             upImgExt: "jpg,jpeg,gif,png",
             upLinkUrl: 'demos/upload.php?immediate=1',
             upFlashUrl: 'demos/upload.php?immediate=1',
@@ -158,7 +158,8 @@
                     success: function (msg) {
                         if (msg == "1") {
                             alert("修改成功");
-                            window.location.href = window.location.href;
+                            //window.location.href = window.location.href;
+                            window.location.href = "/Views/admin/NewsList.aspx";
                         }
                         else
                             alert("修改失敗");

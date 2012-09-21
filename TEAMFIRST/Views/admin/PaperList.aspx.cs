@@ -16,7 +16,7 @@ namespace TEAMFIRST.Views.admin
         protected void Page_Load(object sender, EventArgs e)
         {
             SQLiteParameter[] param = null;
-            string sql = "select newsid,newstitle,strftime('%Y-%m-%d %H:%M:%S', addtime) adddate,state from newspaper order by addtime desc";
+            string sql = "select newsid,newstitle,strftime('%Y-%m-%d %H:%M:%S', addtime) adddate,state from newspaper order by newsid desc";
             DataSet ds = TEAMFIRST.Controls.SQLiteHelper.Query(sql, param);
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -34,7 +34,7 @@ namespace TEAMFIRST.Views.admin
                     stateStr, ds.Tables[0].Rows[i]["newsid"].ToString(), state);
                 sb.AppendFormat("<a href=\"/Views/admin/EditPaper.aspx?newsId={0}\">編輯</a>｜",
                     ds.Tables[0].Rows[i]["newsid"].ToString());
-                sb.AppendFormat("<a href=\"/Views/paper_detail.aspx?naviPage=navi5&newsId={0}\" target=\"_blank\">瀏覽</a></td>",
+                sb.AppendFormat("<a href=\"/Views/paper_detail.aspx?naviPage=navi5&newsId={0}&view=1\" target=\"_blank\">瀏覽</a></td>",
                     ds.Tables[0].Rows[i]["newsid"].ToString());
                 sb.Append("</tr>");
 

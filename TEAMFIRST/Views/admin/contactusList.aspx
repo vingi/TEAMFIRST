@@ -72,7 +72,7 @@
 
             function showContent(rowId) {
                 if (document.getElementById(rowId).style.display == "none")
-                    document.getElementById(rowId).style.display = "block";
+                    document.getElementById(rowId).style.display = "";
                 else
                     document.getElementById(rowId).style.display = "none";
             }

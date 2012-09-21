@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="detail_wrapper">
-            <div id="pre_page"><img width="15" height="59" src="/Assets/Images/pre_page.png" alt="" /></div>
+            <div id="pre_page"><%=prePage %></div>
             <div id="d_content">
                 <div id="d_head">
                     <div id="d_head_left"></div>
@@ -15,11 +15,11 @@
                 <%=content %>
                 </div>
                 <div id="about_img">
-                    <div id="abt_img1"></div>
-                    <div id="abt_img2"></div>
-                    <div id="abt_img3"></div>
+                    <div id="abt_img1"><%=img1 %></div>
+                    <div id="abt_img2"><%=img2 %></div>
+                    <div id="abt_img3"><%=img3 %></div>
                 </div>
             </div>
-            <div id="next_page"><img width="15" height="59" src="/Assets/Images/next_page.png" alt="" /></div>
+            <div id="next_page"><%=nextPage %></div>
     </div>
 </asp:Content>

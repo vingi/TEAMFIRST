@@ -26,8 +26,8 @@ namespace TEAMFIRST.Views.admin
             {
                 msgId = ds.Tables[0].Rows[i]["msgid"].ToString();
                 msgTitle = ds.Tables[0].Rows[i]["msgtitle"].ToString();
-                msgContent = ds.Tables[0].Rows[i]["msgcontent"].ToString().Replace("&quot;", "\"")
-                    .Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp", " ");
+                msgContent = ds.Tables[0].Rows[i]["msgcontent"].ToString().Replace("&amp;","&").Replace("&quot;", "\"")
+                    .Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
                 break;
             }
 

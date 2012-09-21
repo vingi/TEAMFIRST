@@ -19,7 +19,9 @@
     width:960px;
     height:520px;
     margin: 0 auto;
+    /*
     background-image:url(/Assets/Images/news04.jpg);
+    */
     display:block;
 }
 #n_img

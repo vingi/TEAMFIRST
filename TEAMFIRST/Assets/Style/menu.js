@@ -30,7 +30,10 @@ function go_cmdurl(tab){
 		$("#cnt").append($("#dTab1").clone().attr("id","dTab"+rel));
 		$("#dTab"+rel).html("");
 		var iframe = document.createElement('iframe');
-		iframe.src=tab.href;
+		iframe.src = tab.href;
+		iframe.setAttribute("height", document.body.scrollHeight-80);
+		//alert(iframe.getAttribute("height"));
+		//$("#dTab" + rel).attr("height", document.body.scrollHeight);
 		$("#dTab"+rel).append(iframe);
 	}
 	switchTab(tab);

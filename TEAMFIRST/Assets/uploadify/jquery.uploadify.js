@@ -522,8 +522,9 @@ if (jQuery) (
 			// Cancel a file upload and remove it from the queue
 			uploadifyCancel: function (fileID) {
 				//如果照片上传已经完成并已返回该图片,则发送删除命令给服务器
-				var tsrc = jQuery("#" + fileID).find(".ImageShow").attr("src");
-				if (tsrc && tsrc.indexOf("http://") > -1) {
+			    var tsrc = jQuery("#" + fileID).find(".ImageShow").attr("src");
+			    //if (tsrc && tsrc.indexOf("http://") > -1) {
+				if (tsrc) {
 					//删除在服务器上的文件
 					var hiimg = $("#img").val().replace("," + $("#" + fileID + " .uploadifyImageShow img").attr("src"), '');
 					$("#img").val(hiimg);

@@ -62,6 +62,7 @@ a:active {text-decoration:none;color:#999;}
 #contents .menu_top {height:11px;width:200px;background:#fff url("left_tabid_cnt_top.png") no-repeat right bottom;}
 #contents .menu_end {height:18px;width:200px;background:#fff url("border_end.png") no-repeat left top;}
 /* 菜单标题 */
+/*#contents .left div.menu {height:488px!important;height:100%;margin:0;background:url("border_bg.png") repeat-y left top;}*/
 #contents .left div.menu {height:488px!important;height:100%;margin:0;background:url("border_bg.png") repeat-y left top;}
 *+html #contents .left div.menu {height:100%!important;}
 
@@ -194,7 +195,8 @@ a:active {text-decoration:none;color:#999;}
 /* 操作页面层 */
 #contents #cnt {position:relative;z-index:0;}
 #contents #cnt div {height:100%;border:1px #1A76B7 solid;background:#fff;}
-#contents #cnt div iframe {height:517px!important;height:100%;width:100%;}
+/*#contents #cnt div iframe {height:517px!important;height:100%;width:100%;}*/
+#contents #cnt div iframe {width:100%;}
 *+html #contents #cnt div iframe {height:100%!important;}/* IE7 hack */
 #contents #cnt div#dTab1 {height:473px;}
 #contents #cnt div#dTab2 {display:none;}

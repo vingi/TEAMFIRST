@@ -90,7 +90,15 @@
 			}
 			}
 		};
-		editor = $('#elm1').xheditor({ tools: 'Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,Align,List,Outdent,Indent,Link,Unlink,Img,Table,Source,Fullscreen',upLinkUrl: 'demos/upload.php?immediate=1', upImgUrl: 'demos/upload.php?immediate=1', upFlashUrl: 'demos/upload.php?immediate=1', upMediaUrl: 'demos/upload.php?immediate=1', localUrlTest: /^https?:\/\/[^\/]*?(xheditor\.com)\//i, remoteImgSaveUrl: 'demos/saveremoteimg.php', plugins: plugins, loadCSS: '<style>pre{margin-left:2em;border-left:3px solid #CCC;padding:0 1em;}</style>'
+        editor = $('#elm1').xheditor({ tools: 'Blocktag,Fontface,FontSize,Bold,Italic,Underline,Strikethrough,FontColor,BackColor,SelectAll,Removeformat,Align,List,Outdent,Indent,Link,Unlink,Img,Table,Source,Fullscreen',
+            upLinkUrl: 'demos/upload.php?immediate=1',
+            upImgUrl: '/Assets/uploadify/UploadHandler.ashx?immediate=0',
+            upFlashUrl: 'demos/upload.php?immediate=1',
+            upMediaUrl: 'demos/upload.php?immediate=1',
+            localUrlTest: /^https?:\/\/[^\/]*?(xheditor\.com)\//i,
+            remoteImgSaveUrl: 'demos/saveremoteimg.php',
+            plugins: plugins, 
+            loadCSS: '<style>pre{margin-left:2em;border-left:3px solid #CCC;padding:0 1em;}</style>'
 		});
 	}
 	function submitForm() { $('#form2').submit(); }
@@ -115,7 +123,8 @@
 					success: function (msg) {
 						if (msg == "1") {
 							alert("提交成功");
-							window.location.href = window.location.href;
+							//window.location.href = window.location.href;
+							window.location.href = "/Views/admin/NewsList.aspx";
 						}
 						else
 							alert("提交失敗");

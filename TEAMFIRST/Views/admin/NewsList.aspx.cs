@@ -34,7 +34,7 @@ namespace TEAMFIRST.Views.admin
                     stateStr, ds.Tables[0].Rows[i]["msgid"].ToString(), state);
                 sb.AppendFormat("<a href=\"/Views/admin/EditNews.aspx?msgId={0}\">編輯</a>｜",
                     ds.Tables[0].Rows[i]["msgid"].ToString());
-                sb.AppendFormat("<a href=\"/Views/news.aspx?naviPage=navi1&msgId={0}\" target=\"_blank\">瀏覽</a></td>",
+                sb.AppendFormat("<a href=\"/Views/news.aspx?naviPage=navi1&msgId={0}&view=1\" target=\"_blank\">瀏覽</a></td>",
                     ds.Tables[0].Rows[i]["msgid"].ToString());
                 sb.Append("</tr>");
 
