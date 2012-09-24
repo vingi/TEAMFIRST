@@ -1,0 +1,56 @@
+﻿html,body
+{
+    background-color: #FFF;
+}
+#wrapper
+{
+    width: 1024px;
+    height:768px;
+    margin: 0 auto;
+    background-color:#ffbb47;
+    background-image:url(/Assets/Images/introduce_bg.png);
+}
+
+#blank_top
+{
+    width:100%;
+    height:270px;
+}
+
+#logo_bar
+{
+    width:543px;
+    height:121px;
+    background-image:url(/Assets/Images/big_logo.png);
+    margin-left:237px;
+}
+
+#logo span
+{
+    display: inline-block;
+    width:543px;
+    height:121px;
+}
+
+#blank_mid
+{
+    width:100%;
+    height:7px;
+}
+
+#enter
+{
+    width:134px;
+    height:15px;
+    color:#FFF;
+    font-family: 微軟正黑體;
+    margin-left:425px;
+}
+#enter A:visited,
+#enter A:active,
+#enter A:link {
+	COLOR: #fff;text-decoration: none;
+}
+#enter A:hover {
+	COLOR: #fff;text-decoration:underline;
+}

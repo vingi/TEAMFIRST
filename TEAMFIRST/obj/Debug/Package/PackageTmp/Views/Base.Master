@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="TEAMFIRST.Views.Base" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="/Assets/Css/Public.css?V=1.0" rel="stylesheet" type="text/css" />
+    <link href="/Assets/Css/Base.css?V=1.0" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="navi">
+            <div id="navi_left"><a href="/Views/news.aspx?naviPage=navi1&msgid=<%=msgid %>"><span id="navi1">最新消息</span></a>　　<a href="/Views/aboutus.aspx?naviPage=navi2"><span id="navi2">關於我們</span></a>　　<a href="/Views/products.aspx?naviPage=navi3&item=1"><span id="navi3">產品資訊</span></a>　　<a href="/Views/stores.aspx?naviPage=navi4"><span id="navi4">門市介紹</span></a>　　<a href="/Views/paper.aspx?naviPage=navi5"><span id="navi5">媒體報導</span></a>　　<a href="/Views/contactus.aspx?naviPage=navi6"><span id="navi6">連絡我們</span></a></div>
+            <div id="navi_right"><a href="/Views/index.aspx"><img width="210" height="46" src="/Assets/Images/Base/logo.png" alt="logo" /></a></div>
+        </div>
+        <div id="foot">
+            <div class="clearfix">
+                <div id="flower"></div>
+                <div id="buttons">
+                    <div id="button01"><a href="/Views/news.aspx?naviPage=navi1&msgid=<%=msgid %>"></a></div>
+                    <div id="middle_button">
+                        <ul>
+                            <li><div id="button02"><a href="#"></a></div></li>
+                            <li><div id="button03"><a href="#"></a></div></li>
+                        </ul>
+                    </div>
+                    <div id="button04"><a href="#"></a></div>
+                </div>
+            </div>
+        </div>
+        <div id="footline"></div>
+    </div>
+    </form>
+    <script type="text/javascript">
+        var pos, str, para, parastr, tempstr1;
+        tempstr = "";
+        str = window.location.href;
+        pos = str.indexOf("?")
+        parastr = str.substring(pos + 1);
+        //document.write("<br>文件路径：" + str);
+        if (pos > 0) {
+            //document.write("<br>所有参数：" + parastr);
+        }
+        else {
+            //document.write("<br>无参数");
+        }
+
+
+        if (parastr.indexOf("=") > 0) {
+            para = parastr.split("&");
+            var param, value;
+            for (i = 0; i < para.length; i++) {
+                tempstr1 = para[i];
+
+                pos = tempstr1.indexOf("=");
+                param = tempstr1.substring(0, pos);
+                value = tempstr1.substring(pos + 1).replace("#", '');
+                //document.write("<br>参数" + i + ":" + tempstr1.substring(0, pos));
+                //document.write("等于:" + tempstr1.substring(pos + 1));
+                if (param == "naviPage") {
+                    document.getElementById(value).style.color = "#ff0000";
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

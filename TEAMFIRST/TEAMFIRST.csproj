@@ -283,7 +283,6 @@
     <Content Include="Assets\xheditor\demos\upload.asp" />
     <Content Include="Assets\xheditor\demos\upload.aspx" />
     <Content Include="Assets\xheditor\demos\uptest.html" />
-    <Content Include="Assets\xheditor\jquery-1.4.4.min.js" />
     <Content Include="Assets\xheditor\jquery\jquery-1.4.4.min.js" />
     <Content Include="Assets\xheditor\jquery\jquery-1.4.4.src.js" />
     <Content Include="Assets\xheditor\LGPL-LICENSE.txt" />
